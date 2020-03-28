@@ -11,9 +11,6 @@ variables:
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: '144e7092-f976-4fc0-bf0e-57e2de0863ed'
   
-  # Web app name
-  webAppName: 'we-komfront-web2'
-
   # Environment name
   environmentName: 'prod'
 
@@ -38,17 +35,17 @@ stages:
     - task: Npm@1
       inputs:
         command: 'install'
-        workingDir: '$(Build.SourcesDirectory)/frontend'
+        workingDir: '$(Build.SourcesDirectory)'
 
     - task: Npm@1
       inputs:
         command: 'custom'
-        workingDir: '$(Build.SourcesDirectory)/frontend'
+        workingDir: '$(Build.SourcesDirectory)'
         customCommand: 'run build'
 
     - task: AzureFileCopy@3
       inputs:
-        SourcePath: '$(Build.SourcesDirectory)/frontend/build/'
+        SourcePath: '$(Build.SourcesDirectory)/build/'
         azureSubscription: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)-5784'
         Destination: 'AzureBlob'
         storage: 'wekomfrontsa'
