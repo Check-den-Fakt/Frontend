@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
-import "./Landing.css";
 import fetchAPI from '../../utils/fetchAPI';
 import Carousel from 'react-bootstrap/Carousel';
 import partnerLogos from './partner_img.json';
@@ -43,11 +42,11 @@ export default function Landing() {
       </Carousel>
     </div>
   }
-  else{
+  else {
     mobileImages = <div className="text-center">
       <div className="w-100">
       {partnerLogos.map(({ src, alt }, id) => 
-          <img className ="logo-wall"
+          <img className="logo-wall"
             src={src}
             alt={alt}
           />
@@ -61,7 +60,7 @@ export default function Landing() {
   return (
     <div className="container">
         <div className="d-flex justify-content-around mb-5">
-          <img src="/img/logo.svg" width="200em" height="200em" alt="Check the Fact - Erst klären, dann sharen." />
+          <img src="/img/logo.svg" width="200em" height="200em" alt="Check den Fakt - Erst klären, dann sharen." />
         </div>
         <h1 className="text-center">Finde und widerlege <nobr>Corona-Falschnachrichten</nobr></h1>
         <p className="text-center">
@@ -88,7 +87,8 @@ export default function Landing() {
             <div className="container">
             <h2>Worum geht’s hier?</h2>
             <p>
-              Check the Fact ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.
+              Check den Fakt ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check den Fakt sie mit qualifizierten Expertenmeinungen und Quellen ab.<br/><br/>
+              Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.
             </p>
             <p>
               Ganz nach dem Motto: Erst klären, dann sharen!
@@ -105,7 +105,7 @@ export default function Landing() {
           </div>
           <div className="col-9">
             <h3>1. Nachricht hochladen</h3>
-            Gib deine Nachricht bei Check the Fact ein. Folgende Möglichkeiten hast du:
+            Gib deine Nachricht bei Check den Fakt ein. Folgende Möglichkeiten hast du:
             <ul className="purple">
               <li>Links</li>
               <li>Freitexteingabe</li>
