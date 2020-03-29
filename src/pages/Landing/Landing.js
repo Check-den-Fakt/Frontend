@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
-import "./Landing.css";
 import fetchAPI from '../../utils/fetchAPI';
 import Carousel from 'react-bootstrap/Carousel';
 import partnerLogos from './partner_img.json';
@@ -43,11 +42,11 @@ export default function Landing() {
       </Carousel>
     </div>
   }
-  else{
+  else {
     mobileImages = <div className="text-center">
       <div className="w-100">
       {partnerLogos.map(({ src, alt }, id) => 
-          <img className ="logo-wall"
+          <img className="logo-wall"
             src={src}
             alt={alt}
           />
@@ -88,7 +87,8 @@ export default function Landing() {
             <div className="container">
             <h2>Worum geht’s hier?</h2>
             <p>
-              Check den Fakt ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.
+              Check den Fakt ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check den Fakt sie mit qualifizierten Expertenmeinungen und Quellen ab.<br/><br/>
+              Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.
             </p>
             <p>
               Ganz nach dem Motto: Erst klären, dann sharen!
