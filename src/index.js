@@ -20,7 +20,7 @@ authentication.initialize({
     scopes: ['openid'],
     // optional, the redirect URI - if not specified MSAL will pick up the location from window.href
     validateAuthority: false,
-    redirectUri: 'http://localhost:3000/report',
+    redirectUri: 'https://www.check-den-fakt.de/report',
 
     // optional, the URI to redirect to after logout
    // postLogoutRedirectUri: window.location.origin,
