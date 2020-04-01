@@ -12,7 +12,7 @@ export default function Landing() {
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const response = await fetchAPI.postData('https://we-komnews-fa.azurewebsites.net/api/GetNews', {
+      const response = await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-komnews-fa/GetNews', {
         query : "corona"
       });
       setNews(response.news.value);

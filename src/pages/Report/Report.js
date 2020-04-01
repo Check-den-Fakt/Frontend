@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
+import authentication from '../../utils/react-azure-adb2c'
+
 //import Reaptcha from 'reaptcha';
 
 window.id = 0;
 
 export default class Report extends Component {
+
+ 
+
   state = {
     text: '',
     sources: [],
@@ -15,17 +20,22 @@ export default class Report extends Component {
     isLoading: false,
   }
 
+
   handleAddNew = () => {
     const { sources, tempSource } = this.state;
     this.setState({ sources: [...sources, tempSource], tempSource: '' })
   }
 
   handleSubmit = async () => {
+    
+    const adb2cToken = authentication.getAccessToken();
     this.setState({ isLoading: true });
     try {
-      await fetchAPI.postData('https://we-sendfact-fa.azurewebsites.net/api/messagearchive', { text: this.state.text })
+      const response = await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-sendfact-fa/messagearchive', { text: this.state.text }, adb2cToken)
+      
     } catch (e) {
-      this.setState({ isReported: true, isLoading: false })
+      
+      this.setState({ isReported: false, isLoading: false })
     } finally {
       this.setState({ isReported: true, isLoading: false })
     }
@@ -43,7 +53,7 @@ export default class Report extends Component {
      
       <div className="d-flex justify-content-center mt-n3">
         <div className="polygon background-color-1">
-      {isReported ? <h3>Danke!</h3> : <Form>
+      {isReported ? <h3>Danke!</h3> : <Form className="container">
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label></Form.Label>
           <Form.Control
@@ -65,12 +75,12 @@ export default class Report extends Component {
           <a onClick={this.handleAddNew}>Weiteren Beleg hinzufügen +</a>
         </div> */}
         {isLoading ? <Spinner animation="border" /> : <Button 
-          disabled={!text} 
-          onClick={this.handleSubmit} 
-          variant="primary"
-        >
-          Nachricht einreichen
-        </Button>}
+        disabled={!text} 
+        onClick={this.handleSubmit} 
+        variant="primary"
+      >
+        Nachricht einreichen
+      </Button>}
       </Form>}
     </div>
     </div>

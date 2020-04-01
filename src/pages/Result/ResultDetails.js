@@ -15,11 +15,28 @@ import './Result.css';
 //   );
 // }
 
-export default function ResultDetails({ fakeNewsCount, maxValue, result, requestData, trustScore, userScore }) {
+export default function ResultDetails({ details }) {
+
+  
+  const detailedContent = [];
+  for(let index in details){
+    detailedContent.push(
+    <div className="row">
+      <div className="col">
+     
+      <Diagram text={details[index]} isFull confidense={details[index]*100} />
+      </div>
+      <div className="col">
+      <h3>{index}</h3>
+      </div>
+    </div>
+    )}
 
   return (
+   
     <div className="text-left margin-top-40">
-      <p className="fact-header">FakeNews Datenbank search:</p>
+       <h3>Wie kommt diese Einschätzung zustande?</h3>
+       {detailedContent}
       {/* <h1>Wie kommt diese Einschätzung zustande:</h1>   */}
       {/* <div>
         <Diagram text={16} isFull confidense={100} />
@@ -31,10 +48,6 @@ export default function ResultDetails({ fakeNewsCount, maxValue, result, request
         </Accordion>
         <p>{trustScore || 16} seriöse Quellen haben diese Nachricht als glaubwürdig bestätigt.</p>
       </div> */}
-      <div>
-        <Diagram text={fakeNewsCount} isFull confidense={maxValue} />
-        <p className="margin-top-40">Wir haben in unser FakeNews Datenbank {fakeNewsCount} results mit einer Übereinstimmung von bis zu {maxValue}%</p>
-      </div>
     </div>
   );
 }
