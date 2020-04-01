@@ -1,5 +1,5 @@
 export default {
-  postData: async (url = '', data = {}) => {
+  postData: async (url = '', data = {}, adb2cToken = '') => {
     // Default options are marked with *
     const response = await fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -7,6 +7,8 @@ export default {
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {
+        'Ocp-Apim-Subscription-Key' : "67a029cf86da4384b2b511f577163d72",
+        'Authorization' : adb2cToken, 
         'Content-Type': 'application/json'
       },
       timeout: 40000,

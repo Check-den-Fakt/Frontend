@@ -17,6 +17,7 @@ import Report from './pages/Report/Report';
 import Sources from './pages/Sources/Sources';
 import Imprint from "./pages/Imprint/Imprint";
 import DSGVO from "./pages/DSGVO/DSGVO";
+import authentication from './utils/react-azure-adb2c'
 
 function App() {
   return (
@@ -29,12 +30,12 @@ function App() {
           <Route path="/rules">
             <Rules />
           </Route>
+          <Route exact path="/report" component={authentication.required(Report)} />
+
           <Route path="/result">
             <Result />
-          </Route>          
-          <Route path="/report">
-            <Report />
-          </Route>
+          </Route>     
+
           <Route path="/check">
             <Check />
           </Route>

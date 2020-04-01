@@ -33,7 +33,7 @@ export class AddNews extends Component {
   render () {
     const { text, isLoading } = this.state; 
     return (
-    <Form>
+    <Form className="container">
       <Form.Group controlId="exampleForm.ControlTextarea1">
         <Form.Label></Form.Label>
         <Form.Control
