@@ -3,6 +3,7 @@ import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
 import authentication from '../../utils/react-azure-adb2c'
+import  {  } from 'react-router-dom'
 
 //import Reaptcha from 'reaptcha';
 
@@ -37,7 +38,7 @@ export default class Report extends Component {
       
       this.setState({ isReported: false, isLoading: false })
     } finally {
-      this.setState({ isReported: true, isLoading: false })
+      this.props.history.push('/voting');
     }
   }
 
@@ -53,7 +54,7 @@ export default class Report extends Component {
      
       <div className="d-flex justify-content-center mt-n3">
         <div className="polygon background-color-1">
-      {isReported ? <h3>Danke!</h3> : <Form className="container">
+        <Form className="container">
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label></Form.Label>
           <Form.Control
