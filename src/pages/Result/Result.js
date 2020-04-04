@@ -3,8 +3,8 @@ import { NavLink } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
 import './Result.css';
 import { ProgressBar, Card } from 'react-bootstrap';
-import ShareButtons from '../../components/ShareButtons';
-import ResultDetails from './ResultDetails';
+// import ShareButtons from '../../components/ShareButtons';
+// import ResultDetails from './ResultDetails';
 
 export default function Result({verifable, overallScore, requestData, detailedResult }) {
 
