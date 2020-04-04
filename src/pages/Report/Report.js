@@ -80,7 +80,7 @@ export default class Report extends Component {
       >
         Nachricht einreichen
       </Button>}
-      </Form>}
+      </Form>
     </div>
     </div>
         </div>
