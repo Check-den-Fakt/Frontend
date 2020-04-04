@@ -2,7 +2,8 @@ import React, { Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,6 +19,7 @@ import Report from './pages/Report/Report';
 import Imprint from "./pages/Imprint/Imprint";
 import DSGVO from "./pages/DSGVO/DSGVO";
 import authentication from './utils/react-azure-adb2c';
+import Voting from "./pages/Voting/Voting";
 
 function App() {
   return (
@@ -25,18 +27,15 @@ function App() {
       <Layout>
         <Router>
           <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
             <Route path="/rules">
               <Rules />
             </Route>
             <Route exact path="/report" component={authentication.required(Report)} />
-
+            <Route exact path="/voting" component={authentication.required(Voting)} />
             <Route path="/result">
               <Result />
-            </Route>     
-
+            </Route>
+            <Route path="/teamMapSrc/web/index.htm" onEnter={() => window.location.reload()} />
             <Route path="/check">
               <Check />
             </Route>

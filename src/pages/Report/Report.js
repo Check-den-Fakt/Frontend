@@ -21,20 +21,20 @@ export default class Report extends Component {
   handleAddNew = () => {
     const { sources, tempSource } = this.state;
     this.setState({ sources: [...sources, tempSource], tempSource: '' })
-  }
+  };
 
   handleSubmit = async () => {
     
     const adb2cToken = authentication.getAccessToken();
     this.setState({ isLoading: true });
     try {
-      await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-sendfact-fa/messagearchive', { text: this.state.text }, adb2cToken);
+      await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Insert', { Content: this.state.text }, adb2cToken);
     } catch (e) {
       this.setState({ isReported: false, isLoading: false })
     } finally {
-      this.setState({ isReported: true, isLoading: false })
+      this.props.history.push('/voting');
     }
-  }
+  };
 
   render () {
     const { text, isReported, isLoading } = this.state; 
@@ -48,7 +48,7 @@ export default class Report extends Component {
      
       <div className="d-flex justify-content-center mt-n3">
         <div className="polygon background-color-1">
-      {isReported ? <h3>Danke!</h3> : <Form className="container">
+        <Form className="container">
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label></Form.Label>
           <Form.Control
@@ -76,7 +76,7 @@ export default class Report extends Component {
       >
         Nachricht einreichen
       </Button>}
-      </Form>}
+      </Form>
     </div>
     </div>
         </div>
