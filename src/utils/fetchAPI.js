@@ -48,11 +48,28 @@ export default {
     if (response === undefined) return response;
     return await response.json(); // parses JSON response into native JavaScript objects
   },
-  getData: async (url = '') => {
+  getData: async (url = '', adb2cToken = '') => {
+    let headers = {};
+    if(adb2cToken){
+      headers = {
+        'Ocp-Apim-Subscription-Key' : "67a029cf86da4384b2b511f577163d72",
+        'Authorization' : adb2cToken,
+        'Content-Type': 'application/json'
+      };
+    }
     const response = await fetch(url, {
-      
+      method: 'GET',
+      headers,
     });
-    const data = await response.json();
-    return data;
+
+    let res = null;
+    try {
+      res = await response.json();
+    } catch {
+
+    }
+    return res;
   }
+
+
 }

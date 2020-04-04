@@ -25,22 +25,20 @@ export default class Report extends Component {
   handleAddNew = () => {
     const { sources, tempSource } = this.state;
     this.setState({ sources: [...sources, tempSource], tempSource: '' })
-  }
+  };
 
   handleSubmit = async () => {
     
     const adb2cToken = authentication.getAccessToken();
     this.setState({ isLoading: true });
     try {
-      const response = await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-sendfact-fa/messagearchive', { text: this.state.text }, adb2cToken)
-      
+      await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Insert', { text: this.state.text }, adb2cToken)
     } catch (e) {
-      
       this.setState({ isReported: false, isLoading: false })
     } finally {
       this.props.history.push('/voting');
     }
-  }
+  };
 
   render () {
     const { text, isReported, isLoading } = this.state; 

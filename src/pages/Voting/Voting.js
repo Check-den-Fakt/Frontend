@@ -1,45 +1,53 @@
 import React, { Component } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-// import fetchAPI from '../../utils/fetchAPI';
-// import authentication from '../../utils/react-azure-adb2c'
+import fetchAPI from '../../utils/fetchAPI';
+import authentication from '../../utils/react-azure-adb2c'
 
 window.id = 0;
 
 export default class Voting extends Component {
 
   state = {
-    text: '',
     sources: [],
+    news: {},
     tempSource: '',
     isLoading: false,
   };
 
   handleSubmit = async (status) => {
-    
-    // const adb2cToken = authentication.getAccessToken();
-    // this.setState({ isLoading: true });
-    // try {
-    //   const response = await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-sendfact-fa/messagearchive', { text: this.state.text }, adb2cToken)
-    //
-    // } catch (e) {
-    //
-    //   this.setState({ isReported: false, isLoading: false })
-    // } finally {
-    //   this.setState({ isReported: true, isLoading: false })
-    // }
+    const adb2cToken = authentication.getAccessToken();
+    const { news } = this.state;
+    news.Voting = news.Voting + status ? 1 : -1;
+    this.setState({ isLoading: true });
+    try {
+      await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Vote', news, adb2cToken)
+    } catch (e) {
+      this.setState({isLoading: false })
+    } finally {
+      this.setState({isLoading: false })
+      this.getNews();
+    }
   };
 
   getNews = async () => {
-    // ToDO call Loading api
-    this.setState(({text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'}));
-
+    this.setState({isLoading: true});
+    const adb2cToken = authentication.getAccessToken();
+    let response = null;
+    try{
+      response = await fetchAPI.getData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/GetOne', adb2cToken)
+    }
+    catch (e) {
+        this.setState({isLoading: false })
+    } finally {
+      this.setState({isLoading: false, news: response})
+    }
   };
   componentDidMount() {
     this.getNews();
   }
   render () {
-    const { text, isLoading } = this.state;
+    const { news, isLoading } = this.state;
     // Declare a new state variable, which we'll call "count"
     return (
     <div>
@@ -57,7 +65,7 @@ export default class Voting extends Component {
               disabled
             as="textarea" 
             rows="6"
-            value={text}
+            value={news.Content || ''}
             placeholder="Füge hier eine URL oder Textnachricht ein"
 
           />
@@ -67,16 +75,16 @@ export default class Voting extends Component {
               <div className="row">
                 <Button
                     className="col-sm-2"
-                    disabled={!text}
-                    onClick={this.handleSubmit(true)}
+                    disabled={!news}
+                    onClick={() => this.handleSubmit(true)}
                     variant="primary"
                 >
                   Korrekt
                 </Button>
                 <Button
                     className="col-sm-2 offset-sm-8"
-                    disabled={!text}
-                    onClick={this.handleSubmit(false)}
+                    disabled={!news}
+                    onClick={() => this.handleSubmit(false)}
                     variant="warning"
                 >
                   Falsch
@@ -85,7 +93,7 @@ export default class Voting extends Component {
               <div className="row">
                 <Button
                     className="col-sm-4 offset-sm-4"
-                    disabled={!text}
+                    disabled={!news}
                     onClick={this.getNews}
                     variant="light"
                 >
