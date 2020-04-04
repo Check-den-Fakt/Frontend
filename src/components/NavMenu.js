@@ -18,7 +18,7 @@ export class NavMenu extends Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/rules">Goldene Regeln</Nav.Link>
-            <Nav.Link href="/src/web/index.htm">About Us</Nav.Link>
+            <Nav.Link href="/teamMapSrc/web/index.htm">About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

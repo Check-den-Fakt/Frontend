@@ -33,7 +33,7 @@ function App() {
             <Result />
           </Route>  
 
-          <Route path="/src/web/index.htm" onEnter={() => window.location.reload()} />
+          <Route path="/teamMapSrc/web/index.htm" onEnter={() => window.location.reload()} />
    
           <Route path="/check">
             <Check />
