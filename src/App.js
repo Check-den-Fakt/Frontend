@@ -8,7 +8,6 @@ import {
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import About from './pages/About/About';
 import Rules from './pages/Rules/Rules';
 import { Layout } from './components/Layout';
 import Check from './pages/Check/Check';
@@ -25,9 +24,6 @@ function App() {
     <Layout>
       <Router>
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
           <Route path="/rules">
             <Rules />
           </Route>
