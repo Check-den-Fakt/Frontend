@@ -1,0 +1,17 @@
+AddressLine	City	Municipality	AdminDivision	Country	PostCode	Latitude	Longitude	Phone	IsWiFiHotSpot	IsWheelchairAccessible	Opens	Closes	
+Im Hochwald	Sankt Georgen im Schwarzwald		Baden-W�rttemberg	DE	78112	48.12828	8.3272	0800-XXXXX	False	False	600	2300	
+Hohenzollernstra�e 10	Albstadt		Baden-W�rttemberg	DE	72458	48.21574	9.02679	0800-XXXXX	False	True	700	1800	
+Hans-B�cker-Stra�e 13	Olching		Bayern	DE	82140	48.22124	11.32955	0800-XXXXX	False	False	700	1800	
+33 Simcoe St S	Oshawa		ON	CA		43.89714	-78.86356	(226) 555-0179	False	False	700	1800	
+Festhallenstra�e 12	Dotternhausen		Baden-W�rttemberg	DE	72359	48.22677	8.78989	0800-XXXXX	False	False	700	1800	
+An der Torfbahn 1	Ismaning		Bayern	DE	85737	48.22747	11.67665	0800-XXXXX	False	True	700	1800	
+Mauerst
+Beilsteiner Stra�e	Abstatt		Baden-W�rttemberg	DE	74232	49.06626	9.29144	0800-XXXXX	True	True	700	1800	
+Fleiner Stra�e	Ilsfeld		Baden-W�rttemberg	DE	74360	49.06799	9.2164	0800-XXXXX	False	False	700	1800	
+Georg-Kohl-Stra�e	Brackenheim		Baden-W�rttemberg	DE	74336	49.07491	9.06684	0800-XXXXX	False	True	800	2200	
+Jahnstra�e	W�stenrot		Baden-W�rttemberg	DE	71543	49.08185	9.46092	0800-XXXXX	False	True	900	2400	
+In den Hofwiesen 21	Talheim		Baden-W�rttemberg	DE	74388	49.08481	9.19254	0800-XXXXX	False	False	700	1800	
+Franz-von-Sickingen-Stra�e 47	Oberderdingen		Baden-W�rttemberg	DE	75038	49.0878	8.78765	0800-XXXXX	False	True	800	2200	
+863 Flat Shoals Rd SE	Conyers		GA	US	30094	33.64291	-84.0163	(229) 555-0138	False	False	600	2300	
+Wendelinusstra�e	Bruchsal		Baden-W�rttemberg	DE	76646	49.09077	8.55012	0800-XXXXX	False	False	600	2300	
+Draisstra�e 2	Stutensee		Baden-W�rttemberg	DE	76297	49.09099	8.506	0800-XXXXX	False	True	800	2200	
