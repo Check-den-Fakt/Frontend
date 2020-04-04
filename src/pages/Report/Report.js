@@ -10,8 +10,6 @@ window.id = 0;
 
 export default class Report extends Component {
 
- 
-
   state = {
     text: '',
     sources: [],
@@ -19,7 +17,6 @@ export default class Report extends Component {
     isReported: false,
     isLoading: false,
   }
-
 
   handleAddNew = () => {
     const { sources, tempSource } = this.state;
@@ -31,7 +28,7 @@ export default class Report extends Component {
     const adb2cToken = authentication.getAccessToken();
     this.setState({ isLoading: true });
     try {
-      await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Insert', { Content: this.state.text }, adb2cToken)
+      await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Insert', { Content: this.state.text }, adb2cToken);
     } catch (e) {
       this.setState({ isReported: false, isLoading: false })
     } finally {
