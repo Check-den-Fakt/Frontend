@@ -18,6 +18,7 @@ import Sources from './pages/Sources/Sources';
 import Imprint from "./pages/Imprint/Imprint";
 import DSGVO from "./pages/DSGVO/DSGVO";
 import authentication from './utils/react-azure-adb2c'
+import Voting from "./pages/Voting/Voting";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
             <Rules />
           </Route>
           <Route exact path="/report" component={authentication.required(Report)} />
-
+          <Route exact path="/voting" component={authentication.required(Voting)} />
           <Route path="/result">
             <Result />
           </Route>     
