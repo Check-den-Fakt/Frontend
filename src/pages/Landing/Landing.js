@@ -101,10 +101,11 @@ export default function Landing() {
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-1">
             <div className="container">
-            <h2>Worum geht’s hier?</h2>
+            <h2>{t('whatsThisAllAbout')}</h2>
             <p>
-              Check den Fakt ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check den Fakt sie mit qualifizierten Expertenmeinungen und Quellen ab.<br/><br/>
-              Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.
+              {t('checkTheFact')} {t('isAPlatform')}
+              <br/><br/>
+              {t('ifIsTrue')}
             </p>
             <p>
               Ganz nach dem Motto: Erst klären, dann sharen!

@@ -11,6 +11,9 @@
     "goldenRules": "Golden Rules",
     "helpsYouToValidate": " helps you to validate corona news before sharing them.",
     "introText": "The number of fake news concerning the corona virus is increasing constantly. Many people have difficulties estimating, if a news message is true or false. This can lead to uncertainties and misconduct – with dramatic consequences. ",
+    "isAPlatform": "Check the Fact is a platform on which you can check news and messages for their truthfulness. To achieve this, Check the Facts compares them with qualified sources and expert opinions. If  the message is credible, pass it on. If it’s not, post a clarification.",
     "reportFakeMessage": "Report fake message",
-    "_COMMENT": "PLEASE SORT ALPHABETICALLY, THANK YOU!"
+    "trueToTheMotto": "True to the motto: Take care before you share!",
+    "whatsThisAllAbout": "What’s This All About?",
+    "__COMMENT": "PLEASE SORT ALPHABETICALLY, THANK YOU!"
 }
