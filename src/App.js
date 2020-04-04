@@ -2,7 +2,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,8 +35,10 @@ function App() {
 
           <Route path="/result">
             <Result />
-          </Route>     
+          </Route>  
 
+          <Route path="/src/web/index.htm" onEnter={() => window.location.reload()} />
+   
           <Route path="/check">
             <Check />
           </Route>
