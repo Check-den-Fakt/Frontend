@@ -15,7 +15,7 @@ export default function DSGVO() {
         <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
         <h2 id="m3">Verantwortliche</h2>
         <p>
-            Check the Fact<br/>
+            Check den Fakt<br/>
             Kammergasse 9<br/>
             85354 Freising<br/>
             Deutschland</p>
