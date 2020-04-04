@@ -17,7 +17,7 @@ export default class Report extends Component {
     tempSources: {},
     isReported: false,
     isLoading: false,
-  }
+  };
 
   componentDidMount() { this.handleAddNew() }
 
@@ -64,8 +64,7 @@ export default class Report extends Component {
 
 
   render () {
-    const { text, isReported, isLoading } = this.state; 
-    // Declare a new state variable, which we'll call "count"
+    const { text, isLoading } = this.state;
     return (
     <div>
       <div className="text-center">
