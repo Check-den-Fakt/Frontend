@@ -71,7 +71,7 @@ export default function Landing() {
         <div className="center mt-5">
           <div className="row">
             <div className="col-sm m-2">
-            <Button href="/check" variant="primary" block className="py-3">
+            <Button href="/check" variant="primary" block className="py-3 btn">
               <b>Nachricht überprüfen</b>
             </Button>
             </div>

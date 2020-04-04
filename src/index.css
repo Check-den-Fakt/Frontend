@@ -109,6 +109,7 @@ h3 {
 }
 
 .circle-icon {
+  font-size: 400% !important;
   background: #D9D8F0;
   padding: 10px;
   border-radius: 50%;
@@ -143,10 +144,18 @@ button:disabled {
   border-color: gray !important;
 }
 
+.btn-link {
+  vertical-align: middle !important;
+  color: #3E049D !important;
+}
+
 .material-icons {
-  font-size: 400% !important;
   color: #3E049D;
   /* Preferred icon size */
+}
+
+.icon-btn{
+  font-size: 20px !important;
 }
 
 /*Logo Carousel for mobile and Logo wall for desktop*/
