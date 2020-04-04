@@ -2,14 +2,12 @@ import React, { Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import './i18n';
-import About from './pages/About/About';
 import Rules from './pages/Rules/Rules';
 import { Layout } from './components/Layout';
 import Check from './pages/Check/Check';
