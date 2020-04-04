@@ -14,7 +14,7 @@ export default function NavMenu () {
         <img src="/img/header_logo.svg" width="200" className="d-inline-block align-top"
         alt={t('checkTheFactCheckBeforeYouShare')}
         title={t('checkTheFactCheckBeforeYouShare')}/>
-      /></Navbar.Brand>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
