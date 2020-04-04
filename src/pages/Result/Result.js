@@ -6,9 +6,7 @@ import { ProgressBar, Card } from 'react-bootstrap';
 // import ShareButtons from '../../components/ShareButtons';
 // import ResultDetails from './ResultDetails';
 
-export default function Result({verifable, overallScore, requestData, detailedResult }) {
-
-  
+export default function Result({verifable, overallScore, requestData }) {
   const trustScore = Math.round(overallScore * 100) / 100
   //console.log("The result functions score",trustScore)
   // Declare a new state variable, which we'll call "count"
