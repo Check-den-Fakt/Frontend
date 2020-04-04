@@ -65,8 +65,12 @@ export default {
     let res = null;
     try {
       res = await response.json();
-    } catch {
-
+    } catch (e) {
+      if( response.status === 205) {
+        res = null;
+      } else {
+        throw(e);
+      }
     }
     return res;
   }

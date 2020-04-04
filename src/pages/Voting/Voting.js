@@ -13,36 +13,45 @@ export default class Voting extends Component {
     news: {},
     tempSource: '',
     isLoading: false,
+    offset: 0,
   };
 
   handleSubmit = async (status) => {
     const adb2cToken = authentication.getAccessToken();
     const { news } = this.state;
+    const type = status ? 'Up' : 'Down';
+    const body = {
+      id: news.id,
+      DateTime: news.DateTime,
+    };
     news.Voting = news.Voting + status ? 1 : -1;
     this.setState({ isLoading: true });
     try {
-      await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Vote', news, adb2cToken)
+      await fetchAPI.postData(`https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Vote${type}`, body, adb2cToken)
     } catch (e) {
       this.setState({isLoading: false })
     } finally {
-      this.setState({isLoading: false })
+      this.setState({isLoading: false });
       this.getNews();
     }
   };
 
   getNews = async () => {
+    const {offset} = this.state;
     this.setState({isLoading: true});
     const adb2cToken = authentication.getAccessToken();
+    const query = offset === 0 ? 'GetOne' : `GetNext?offset=${offset}`;
     let response = null;
     try{
-      response = await fetchAPI.getData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/GetOne', adb2cToken)
+      response = await fetchAPI.getData(`https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/${query}`, adb2cToken)
     }
     catch (e) {
-        this.setState({isLoading: false })
+      this.setState({isLoading: false })
     } finally {
-      this.setState({isLoading: false, news: response})
+      this.setState({isLoading: false, news: response, offset: offset + 1});
     }
   };
+
   componentDidMount() {
     this.getNews();
   }
@@ -65,9 +74,7 @@ export default class Voting extends Component {
               disabled
             as="textarea" 
             rows="6"
-            value={news.Content || ''}
-            placeholder="Füge hier eine URL oder Textnachricht ein"
-
+            value={ (!!news && news.Content) || 'Keine weitere Nachrichten zum abstimmen vorhanden...'}
           />
         </Form.Group>
         {isLoading ? <Spinner animation="border" /> :
