@@ -223,6 +223,14 @@ button:disabled {
   font-size: 20px !important;
 }
 
+.vote-btn{
+  font-size: 50px !important;
+}
+
+.vote-btn-text{
+  color: black !important;
+}
+
 /*Logo Carousel for mobile and Logo wall for desktop*/
 .carousel-item {
   height: 150px !important;
@@ -297,6 +305,14 @@ a.purple {
 .yellow {
   color: #F7CC36 !important;
   font-size: 800% !important;
+}
+
+.green {
+  color: #6fcf97 !important;
+}
+
+.red {
+  color: #cf6f6f !important;
 }
 
 @media (max-width: 768px) {
