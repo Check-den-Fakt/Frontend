@@ -11,8 +11,9 @@
     "goldenRules": "Goldene Regeln",
     "ifItsTrue": "Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.",
     "introText": "Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Dabei sind diese Nachrichten teilweise so professionell verfälscht, dass die Bewertung des Wahrheitsgehalts nicht sofort erkennbar ist. Das kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen.",
-    "isAPlatform": "ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check den Fakt sie mit qualifizierten Expertenmeinungen und Quellen ab.",
+    "isAPlatform": "ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.",
     "reportFakeMessage": "Fake Nachricht melden",
+    "trueToTheMotto": "Ganz nach dem Motto: Erst klären, dann sharen!", 
     "whatsThisAllAbout": "Worum geht’s hier?",
     "__KOMMENTAR": "BITTE ALPHABETISCH SORTIEREN, DANKE!"
 }

@@ -104,11 +104,9 @@ export default function Landing() {
             <h2>{t('whatsThisAllAbout')}</h2>
             <p>
               {t('checkTheFact')} {t('isAPlatform')}
-              <br/><br/>
-              {t('ifIsTrue')}
             </p>
             <p>
-              Ganz nach dem Motto: Erst klären, dann sharen!
+              {t('trueToTheMotto')}
             </p>
             </div>
             </div>
