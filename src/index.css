@@ -207,6 +207,13 @@ button:disabled {
 
 .purple {
   color: #3E049D !important;
+  letter-spacing: 0.5px;
+  list-style-type: '- ';
+  padding-left: 7px;
+}
+
+.no-bullets.purple {
+  padding-left: 0;
 }
 
 .yellow {

@@ -31,22 +31,23 @@ export default function Landing() {
   };
 
   if (i18n.language === "en") {
-    addText = <div><br/><strong>
+    addText = <span><br/><br/><strong>
       {t('checkTheFact')}</strong>
-      {t('helpsYouToValidate')}</div>;
+      {t('helpsYouToValidate')}</span>;
   }
 
   if (isMobile) {
     mobileImages = <div className="text-center pt-5">
       <Carousel activeIndex={index} onSelect={handleSelect}>
-      {partnerLogos.map(({ src, alt }) => 
-      <Carousel.Item>
+      {partnerLogos.map(({ src, alt }, id) => 
+      <Carousel.Item key={id}>
          <div className="img-container">
           <img
             className="carousel-img"
             src={src}
             alt={alt}
             title={alt}
+            key={id}
           />
           </div>
       </Carousel.Item>
@@ -100,20 +101,18 @@ export default function Landing() {
         </div>
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-1">
-            <div className="container">
-            <h2>{t('whatsThisAllAbout')}</h2>
-            <p>
-              {t('checkTheFact')} {t('isAPlatform')}
-              <br/><br/>
-              {t('ifIsTrue')}
-            </p>
-            <p>
-              Ganz nach dem Motto: Erst klären, dann sharen!
-            </p>
+            <div className="container p-5">
+              <h2>{t('whatsThisAllAbout')}</h2>
+              <p>
+                {t('checkTheFact')} {t('isAPlatform')}
+              </p>
+              <p>
+                {t('trueToTheMotto')}
+              </p>
             </div>
-            </div>
+          </div>
         </div>
-        <h1>So prüfst Du Deine Nachricht.</h1>
+        <h1>{t('howToEvaluate')}</h1>
         <div className="row mt-5 pt-3">
           <div className="col-3">
             <span className="material-icons circle-icon">
@@ -121,13 +120,15 @@ export default function Landing() {
             </span>
           </div>
           <div className="col-9">
-            <h3>1. Nachricht hochladen</h3>
-            Gib deine Nachricht bei Check den Fakt ein. Folgende Möglichkeiten hast du:
+            <h3>{t('1.uploadMessage')}</h3>
+            {t('enterYourNewsMessage')}
             <ul className="purple">
-              <li>Links</li>
-              <li>Freitexteingabe</li>
-              <li>Social Messenger Nachrichten</li>
-              <li>Tweets</li>
+              <li>{t('links')}</li>
+              <li>{t('text')}</li>
+              <li>{t('socialMediaMessages')}</li>
+              <li>{t('tweets')}</li>
+              <li>{t('documents')}</li>
+              <li>{t('pictures')}</li>
             </ul>
           </div>
         </div>
@@ -139,39 +140,43 @@ export default function Landing() {
           </span>
           </div>
           <div className="col-9">
-            <h3>2. Ergebnis erhalten</h3>
-            Nach dem Hochladen erhältst du die Auswertung, mit folgenden Möglichkeit:
-            <ul className="purple">
-              <li>Grün: Glaubwürdig. Teilen erwünscht!</li>
-              <li>Gelb: Zweifelhaft! Hinweise beachten!</li>
-              <li>Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!</li>
-              <li>Grau: Nicht auswertbar. Hinweise beachten!</li>
+            <h3>{t('2.obtainResult')}</h3>
+            {t('afterUploadingYourMessage')}
+            <ul className="purple no-bullets">
+              <li>{t('green')}</li>
+              <li>{t('yellow')}</li>
+              <li>{t('red')}</li>
+              <li>{t('grey')}</li>
             </ul>
           </div>
         </div>
-
         <div className="row mt-5">
           <div className="col-3">
             <span className="material-icons circle-icon">
               share
-          </span>
+            </span>
           </div>
           <div className="col-9">
-            <h3>3. Auswertung weiterleiten </h3>
-            <p>Teile das Prüfergebnis mit deinen Kontakten, um sie zu informieren.
-          </p>
+            <h3>{t('3.shareTheResult')}</h3>
+            <p>
+              {t('shareTheResult')}
+            </p>
           </div>
         </div>
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-2">
-            <div className="container">
-                <h1>Trending News zu Corona</h1>
+            <div className="container p-5">
+                <h1>{t('trendingNews')}</h1>
                 <ol>
-                  
-                {news.map(({ name, url }, index) => <li key={index}>
-                  <p><a className="purple" href={url} target="_blank" rel="noopener noreferrer">{name}</a></p>
-                  </li>)}
-               
+                  {news.map(({ name, url }, index) => 
+                    <li key={index}>
+                      <p>
+                        <a className="purple" href={url} target="_blank" rel="noopener noreferrer" title={name}>
+                          {name}
+                        </a>
+                      </p>
+                    </li>
+                  )}
                 </ol>
             </div>
 
