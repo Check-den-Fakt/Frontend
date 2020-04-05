@@ -7,14 +7,14 @@ import { useTranslation, getI18n } from 'react-i18next';
 
 export default function Landing() {
   const { t } = useTranslation();
+  const i18n = getI18n();
   const isMobile = window.innerWidth <= 768;
   const [index, setIndex] = useState(0);
   const [news, setNews] = useState([]);
-  const i18n = getI18n();
   const imgSrc = "img/logo-" + i18n.language + ".png";
   let mobileImages = null;
   let addText = null;
-  
+
   useEffect(() => {
     async function fetchData() {
       // You can await here
@@ -25,49 +25,45 @@ export default function Landing() {
     }
     fetchData();
   }, []); // Or [] if effect doesn't need props or state
-  
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
-
   if (i18n.language === "en") {
     addText = <span><br/><br/><strong>
       {t('checkTheFact')}</strong>
       {t('helpsYouToValidate')}</span>;
   }
-
   if (isMobile) {
     mobileImages = <div className="text-center pt-5">
       <Carousel activeIndex={index} onSelect={handleSelect}>
-      {partnerLogos.map(({ src, alt }, id) => 
-      <Carousel.Item key={id}>
-         <div className="img-container">
-          <img
-            className="carousel-img"
-            src={src}
-            alt={alt}
-            title={alt}
-            key={id}
-          />
-          </div>
-      </Carousel.Item>
-      )}
+        {partnerLogos.map(({ src, alt }, id) => 
+          <Carousel.Item key={id}>
+            <div className="img-container">
+              <img className="carousel-img"
+                src={src}
+                alt={alt}
+                title={alt}
+                key={id} />
+            </div>
+          </Carousel.Item>
+        )}
       </Carousel>
     </div>
   } else {
-    mobileImages = <div className="text-center">
+    mobileImages = 
+    <div className="text-center">
       <div className="w-100">
-      {partnerLogos.map(({ src, alt }) => 
-          <img className="logo-wall"
-            src={src}
-            alt={alt}
-            title={alt}
-          />
-      )}
-            </div>
+        {partnerLogos.map(({ src, alt }, id) => 
+            <img className="logo-wall"
+              src={src}
+              alt={alt}
+              title={alt}
+              key={id}
+            />
+        )}
       </div>
+    </div>
   }
-
   return (
     <div className="container">
         <div className="d-flex justify-content-around mb-5">
@@ -132,7 +128,6 @@ export default function Landing() {
             </ul>
           </div>
         </div>
-        
         <div className="row mt-5">
           <div className="col-3">
             <span className="material-icons circle-icon">
@@ -178,14 +173,10 @@ export default function Landing() {
                     </li>
                   )}
                 </ol>
-            </div>
-
+            </div>  
           </div>
         </div>
-
        {mobileImages}
-
-
     </div>
   );
 }

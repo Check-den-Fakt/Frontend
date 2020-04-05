@@ -67,9 +67,10 @@ export default class Voting extends Component {
      
       <div className="d-flex justify-content-center mt-n3">
         <div className="polygon background-color-1">
+        <h3 className="text-center py-2">Wie schätzt du folgenden Text ein?</h3>
        <Form className="container">
         <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Wie schätzt du folgenden Text ein?</Form.Label>
+
           <Form.Control
               disabled
             as="textarea" 
@@ -79,36 +80,52 @@ export default class Voting extends Component {
         </Form.Group>
         {isLoading ? <Spinner animation="border" /> :
             <div className="center mt-5">
-              <div className="row">
-                <Button
-                    className="col-sm-2"
-                    disabled={!news}
-                    onClick={() => this.handleSubmit(true)}
-                    variant="primary"
-                >
-                  Korrekt
-                </Button>
-                <Button
-                    className="col-sm-2 offset-sm-8"
+ 
+              <div className="d-flex justify-content-between">
+              <Button
+                    className="vote-btn-text"
                     disabled={!news}
                     onClick={() => this.handleSubmit(false)}
-                    variant="warning"
+                    variant="link"
                 >
-                  Falsch
+                  <span class="material-icons vote-btn red">
+                thumb_down
+                </span>
+                <p><b>Fake</b></p>
+                </Button>
+
+                <Button
+                    className="vote-btn-text"
+                    variant="link"                
+                    disabled={!news}
+                    onClick={() => this.handleSubmit(true)}
+                >
+                <span class="material-icons vote-btn green">
+                thumb_up
+                </span>
+                <p><b>Richtig</b></p>
                 </Button>
               </div>
-              <div className="row">
+
+              <div className="d-flex justify-content-center">
                 <Button
-                    className="col-sm-4 offset-sm-4"
+                
                     disabled={!news}
                     onClick={this.getNews}
                     variant="light"
                 >
-                  Ich bin mir nicht sicher
+                  <b>Überspringen</b>
                 </Button>
               </div>
             </div>}
       </Form>
+      
+    </div>
+    </div>
+    <div className="text-center ">
+    <p>Hier findest du ein paar Tipps, die dir dabei helfen Nachrichten zu verifizieren.</p>
+    <div className="d-flex justify-content-center">
+    <Button className="py-2" variant="primary" href="/rules"><b>Wie erkenne ich Fake News</b></Button>
     </div>
     </div>
         </div>
