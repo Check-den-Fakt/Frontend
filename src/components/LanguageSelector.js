@@ -13,13 +13,13 @@ const LanguageSelector = () => {
     <div>
       <div className="form-check form-check-inline" onChange={changeLanguage}>
         <input className="form-check-input" type="radio" value="en" name="language" id="language-en" defaultChecked />
-        <label className="form-check-label" for="language-en" title={t('english')}>
+        <label className="form-check-label" htmlFor="language-en" title={t('english')}>
           {t('english')}
         </label>
       </div>
       <div className="form-check form-check-inline" onChange={changeLanguage}>
         <input className="form-check-input" type="radio" value="de" name="language" id="language-de" />
-        <label class="form-check-label" for="language-de" title={t('german')}>
+        <label className="form-check-label" htmlFor="language-de" title={t('german')}>
           {t('german')}
         </label>
       </div>

@@ -100,7 +100,7 @@ export default function Landing() {
         </div>
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-1">
-            <div className="container">
+            <div className="container p-5">
             <h2>{t('whatsThisAllAbout')}</h2>
             <p>
               {t('checkTheFact')} {t('isAPlatform')}
