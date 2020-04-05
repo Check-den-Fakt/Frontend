@@ -5,7 +5,7 @@ export default function Rules() {
   const { t } = useTranslation();
     // Declare a new state variable, which we'll call "count"
   return (
-    <div className="container">
+    <div className="container mt-5">
         <h1>{t("Detect")}</h1>
         <p> {t("FakeNewsLooseTheir")} {t("TheFloodOf")}  <a href="https://www.infektionsschutz.de/cv/coronavirus.html" target="_blank" rel="noopener noreferrer">
   <u><i>{t("Coronavirus")}</i></u></a> {t("ConfusesAnd")}

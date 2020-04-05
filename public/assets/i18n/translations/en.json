@@ -1,5 +1,4 @@
 {
-
     "_COMMENT": "PLEASE SORT ALPHABETICALLY, THANK YOU!",
 
     "1.uploadMessage": "1. Upload Message",
@@ -15,6 +14,8 @@
     "AmIAskedTo" : "Am I being asked to share this message? (“please share.”)",
 
     "checkBeforeYouShare": "Check den Fakt - Erst checken, dann sharen.",
+
+    "checkCoronaMessage": "Check Corona Message",
 
     "checkMessage": "Evaluate News Message",
 
@@ -62,6 +63,10 @@
 
     "howToEvaluate": "How to Evaluate a News Message?",
 
+    "howDoYouDoThat": "How do you do that?",
+    "howToEvaluate": "How to Evaluate a News Message?",
+    "insertAFile": "Insert a file, text message or link here!",
+
     "introText": "The number of fake news concerning the corona virus is increasing constantly. Many people have difficulties estimating, if a news message is true or false. This can lead to uncertainties and misconduct – with dramatic consequences. ",
 
     "imprint": "Imprint",
@@ -107,6 +112,8 @@
     "trueToTheMotto": "True to the motto: Take care before you share!",
 
     "tweets": "Tweets",
+    
+    "unsureIfThisNews": "Unsure if this news message is true? Let us help you!",
 
     "whatsThisAllAbout": "What’s This All About?",
 

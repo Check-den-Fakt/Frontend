@@ -59,7 +59,7 @@ export default class Voting extends Component {
     const { news, isLoading } = this.state;
     // Declare a new state variable, which we'll call "count"
     return (
-    <div>
+    <div className="mt-5">
       <div className="text-center">
         <h1 className="display-4">Unterstütze die Check The Fact Community</h1>
         <p className="lead">Wir können noch ein bisschen Hilfe bei der Beurteilung dieser Nachricht gebrauchen.</p>

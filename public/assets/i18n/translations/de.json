@@ -16,6 +16,8 @@
 
     "checkBeforeYouShare": "Check den Fakt - Erst checken, dann sharen.",
 
+    "checkCoronaMessage": "Check deine Corona-News",
+
     "checkMessage": "Nachricht überprüfen",
 
     "checkTheFact": "Check den Fakt",
@@ -59,6 +61,8 @@
     "grey": "Grau: Nicht auswertbar. Hinweise beachten!",
 
     "helpsYouToValidate": " helps you to validate corona news before sharing them.",
+  
+    "howDoYouDoThat": "Wie macht ihr das?",
 
     "howToEvaluate": "So prüfst Du Deine Nachricht.",
 
@@ -67,6 +71,8 @@
     "imprint": "Impressum",
 
     "immunity" : "Werden mir Vermutungen als Fakten präsentiert? (“Wenn sich genug Leute anstecken, entwickelt sich eine Herdenimmunität und es kann sich nicht mehr verbreiten.”)",
+
+    "insertAFile": "Füge hier eine URL oder Textnachricht ein",
 
     "introText": "Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Dabei sind diese Nachrichten teilweise so professionell verfälscht, dass die Bewertung des Wahrheitsgehalts nicht sofort erkennbar ist. Das kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen.",
 
@@ -109,6 +115,8 @@
     "TheseAreThe" : "Das sind die Antworten, wie Du falschen Nachrichten entgegen wirkst:",
 
     "tweets": "Tweets",
+
+    "unsureIfThisNews": "Du bist Dir nicht sicher, ob eine Nachricht wahr ist? Wir helfen Dir!",
 
     "whatsThisAllAbout": "Worum geht’s hier?",
 

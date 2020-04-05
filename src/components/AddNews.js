@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import {  Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import { withTranslation } from 'react-i18next';
 
-export class AddNews extends Component {
+class AddNews extends Component {
   state = {
     url: '',
     text: '',
     type: '',
-    isLoading: false
+    isLoading: false, 
+    to: null
   };
 
   onChangeValue = (property, { currentTarget }) => {
@@ -24,14 +26,15 @@ export class AddNews extends Component {
   handleSubmit = async () => {
     const { text } = this.state;
     const key = this.isURL(text) ? 'url' : 'text'; 
-    this.setState({ isLoading: true })
+    this.setState({ isLoading: true });
     this.props.onSubmit({
       [key]: text,
-    })
+    });
   };
 
   render () {
     const { text, isLoading } = this.state; 
+
     return (
     <Form className="container">
       <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -41,7 +44,7 @@ export class AddNews extends Component {
           as="textarea" 
           rows="6"
           disabled={isLoading}
-          placeholder="Füge hier eine URL oder Textnachricht ein"
+          placeholder="Insert a file, text message or link here!"
         />
       </Form.Group>
       {isLoading ? <Spinner animation="border" /> : <Button 
@@ -50,9 +53,11 @@ export class AddNews extends Component {
         variant="primary"
         className="submit-btn mb-3"
       >
-        <b>Check den Fakt</b>
+        <b>Check This Fact</b>
       </Button>}
     </Form>
     );
   }
 }
+
+export default withTranslation()(AddNews);
