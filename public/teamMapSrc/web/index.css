@@ -126,7 +126,7 @@ header {
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
         padding: 8px;
-        height: 30px;
+        /*height: 30px;*/
         background-color: #007faa;
         color: white;
         font-weight: bold;
@@ -145,8 +145,7 @@ header {
 
     .storePopup img {
         vertical-align:middle;
-        height: 12px;
-        margin-right: 5px;
+        height: 30px;
     }
 
 /* Adjust the layout of the page when the screen width is less than 800 pixels. */
