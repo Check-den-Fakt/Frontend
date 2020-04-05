@@ -24,13 +24,14 @@ export default class Report extends Component {
   sourcesInputs = [];
 
   updateTempSource = (formId, source) =>{
-    this.setState('tempSources[formId]', {source: source});
+    this.state.tempSources[formId] = {source: source}
   }
 
   handleAddNew = () => {
     let formId = "Source_" + this.sourcesInputs.length;
     let formNr = this.sourcesInputs.length + 1;
-    this.setState('tempSources[formId]', {source: ""});
+    this.state.tempSources[formId] = {source: ""};
+
     this.setState({ sources: []})
     this.sourcesInputs.push(
       <div className="py-1">
