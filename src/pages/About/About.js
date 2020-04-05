@@ -1,10 +1,17 @@
 import React from 'react';
+import Iframe from 'react-iframe'
+import './About.css'
 
 export default function About() {
   return (
       <div className="container">
           <h1>Das Check-den-Fakt-Team stellt sich vor</h1>
           <p>Wir sind ein interdisziplinäres Team, bestehend aus 36 Spezialisten aus aller Welt. Unser Team besteht aus Menschen verschiedenen Alters, Geschlechts und Fachrichtungen, trotz allem haben wir alle dasselbe Ziel.</p>
+          <Iframe 
+            url="/teamMapSrc/web/index.htm"
+            id="mapFrame"
+            className="map-iframe"
+          />
           <div className="pt-5 d-flex justify-content-center">
               <div className="polygon background-color-2">
                   <div className="container">
