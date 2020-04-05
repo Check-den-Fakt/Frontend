@@ -1,0 +1,6 @@
+.map-iframe {
+  position: inherit !important;
+  display: flex !important;
+  width: 1080px !important;
+  height: 600px !important;
+}

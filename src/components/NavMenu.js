@@ -18,9 +18,8 @@ export default function NavMenu () {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/rules"
-            title={t('goldenRules')}>{t('goldenRules')}</Nav.Link>
-            <Nav.Link href="/teamMapSrc/web/index.htm" title={t('aboutUs')}>{t('aboutUs')}</Nav.Link>
+            <Nav.Link href="/rules">{t('goldenRules')}</Nav.Link>
+            <Nav.Link href="/about">{t('aboutUs')}</Nav.Link>
           </Nav>
           <LanguageSelector />
         </Navbar.Collapse>
