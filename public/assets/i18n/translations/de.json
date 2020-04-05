@@ -1,45 +1,127 @@
 {
+
     "_KOMMENTAR": "BITTE ALPHABETISCH SORTIEREN, DANKE!",
+
     "1.uploadMessage": "1. Nachricht hochladen",
+
     "2.obtainResult": "2. Ergebnis erhalten",
+
     "3.shareTheResult": "3. Auswertung weiterleiten",
+
     "aboutUs": "Über uns",
+
     "afterUploadingYourMessage": "Nach dem Hochladen erhältst du die Auswertung, mit folgenden Möglichkeit:",
+
+    "AmIAskedTo" : "Werde ich aufgefordert, diese Nachricht zu teilen? (“bitte weiterleiten.”)",
+
     "checkBeforeYouShare": "Check den Fakt - Erst checken, dann sharen.",
+
     "checkCoronaMessage": "Check deine Corona-News",
+
     "checkMessage": "Nachricht überprüfen",
+
     "checkTheFact": "Check den Fakt",
+
+    "CheckWithApp" : "Prüfe Deine Informationen mit unserer App, bevor Du sie verbreitest.",
+
     "contact": "Kontakt",
+
+    "ConspiracyTheory" : "Erzählt man mir eine Verschwörungstheorie? (“Z.B.: Das Virus wurde schon im Jahr X in einem Waffenlabor in Land Y entwickelt.”)",
+
     "coronaFakeNews": "Corona-Falschnachrichten",
-    "documents": "Dokumente",
+
+    "Coronavirus" : "Coronavirus",
+
+    "ConfusesAnd" : "verwirrt und richtet Schaden an. Falsche Nachrichten verbreiten sich schnell und wirken selbst wie ein Virus. Mit unserer App kannst Du Corona-Meldungen auf Ihren Wahrheitsgehalt prüfen und von Dir entdeckte Falschmeldungen mitteilen.",
+
+    "Detect" : "Fake-News entlarven",
+
+    "documents" : "Dokumente",
+
+    "DontShare" : "Teile nichts, von dem du nicht weißt, dass es stimmt.",
+
     "dataPrivacyPolicy": "Datenschutzerklärung",
+
     "english": " Englisch ",
+
     "enterYourNewsMessage": "Gib deine Nachricht bei Check the Fact ein. Folgende Möglichkeiten hast du:",
+
+    "FakeNewsLooseTheirPower" : "Fake-News verlieren ihre Macht, wenn Du sie nicht mehr teilst! ",
+
     "findAndRefute": "Finde und widerlege ",
+
+    "First" : "Mache Dich und andere zuerst schlau und entscheide dann, was stimmt.",
+
     "german": " Deutsch ",
+
     "goldenRules": "Goldene Regeln",
+
     "green": "Grün: Glaubwürdig. Teilen erwünscht!",
+
     "grey": "Grau: Nicht auswertbar. Hinweise beachten!",
+
     "helpsYouToValidate": " helps you to validate corona news before sharing them.",
+  
     "howDoYouDoThat": "Wie macht ihr das?",
+
     "howToEvaluate": "So prüfst Du Deine Nachricht.",
+
     "ifItsTrue": "Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.",
+
     "imprint": "Impressum",
+
+    "immunity" : "Werden mir Vermutungen als Fakten präsentiert? (“Wenn sich genug Leute anstecken, entwickelt sich eine Herdenimmunität und es kann sich nicht mehr verbreiten.”)",
+
     "insertAFile": "Füge hier eine URL oder Textnachricht ein",
+
     "introText": "Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Dabei sind diese Nachrichten teilweise so professionell verfälscht, dass die Bewertung des Wahrheitsgehalts nicht sofort erkennbar ist. Das kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen.",
+
     "isAPlatform": "ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.",
+
     "links": "Links",
+
+    "PersonalLevel" : "Baut jemand in der Nachricht persönliche Nähe zu mir auf? (“Ich bin die Mutti von XY”)",
+
     "pictures": "Bilder",
+
     "red": "Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!",
+
+    "ReferenceImages" : "Werde ich auf Bilder, Videos oder Sprachnachrichten ohne genauere Angaben verwiesen? (“Lange Schlange vor Geschäft X in Stadt Y”).",
+
     "reportFakeMessage": "Fake Nachricht melden",
+
     "shareTheResult": "Teile das Prüfergebnis mit deinen Kontakten, um sie zu informieren.",
+
     "socialMediaMessages": "Social Messenger Nachrichten",
+
+    "StoryFromAnotherCountry" : "Erzählt man mir Geschichten, z.B. aus einem anderen Land? (“In Italien wurde beobachtet…“)",
+
+    "Statistics" : "Zeigt man mir eine Statistik oder Aussagen angeblich bekannter Institutionen oder Personen ohne Quellennachweis? (“10 von 5 am Coronavirus Erkrankte von 2010-2015 …”)" ,
+
+    "SimpleReasoning" : "Werden vereinfachte Schlussforderungen gezogen? (“Italien hat eine alte Bevölkerung, für Alte ist die Krankheit besonders gefährlich. Daher ist es logisch das dort viele Alte erkranken”)",
+
+    "Simplification" : "Wird die Aussage stark vereinfacht? (“Es gab schon immer Corona- und Grippe-Viren, daher sind die Corona-Auswirkungen nicht schlimmer als eine normale Grippe-Welle.”)",
+
     "text": "Freitexteingabe", 
+
+    "TheseQuestions" : "Diese Fragen solltest Du Dir stellen, um falsche Nachrichten zu entlarven:",
+
     "trendingNews": "Klarstellungs-Trends zu Corona",
+ 
     "trueToTheMotto": "Ganz nach dem Motto: Erst klären, dann sharen!", 
+
+    "TheFloodOf" : "Die Flut falscher Nachrichten zum",
+
+    "TheseAreThe" : "Das sind die Antworten, wie Du falschen Nachrichten entgegen wirkst:",
+
     "tweets": "Tweets",
+
     "unsureIfThisNews": "Du bist Dir nicht sicher, ob eine Nachricht wahr ist? Wir helfen Dir!",
+
     "whatsThisAllAbout": "Worum geht’s hier?",
+
     "yellow": "Gelb: Zweifelhaft! Hinweise beachten!",
+
     "__KOMMENTAR": "BITTE ALPHABETISCH SORTIEREN, DANKE!"
+
 }

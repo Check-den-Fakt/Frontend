@@ -1,44 +1,124 @@
 {
     "_COMMENT": "PLEASE SORT ALPHABETICALLY, THANK YOU!",
+
     "1.uploadMessage": "1. Upload Message",
+
     "2.obtainResult": "2. Obtain Result",
+
     "3.shareTheResult": "3. Share the Result",
+
     "aboutUs": "About us",
+
     "afterUploadingYourMessage": "After uploading your message, you receive an evaluation. It shows one of the following results:",
+
+    "AmIAskedTo" : "Am I being asked to share this message? (“please share.”)",
+
     "checkBeforeYouShare": "Check den Fakt - Erst checken, dann sharen.",
+
     "checkCoronaMessage": "Check Corona Message",
+
     "checkMessage": "Evaluate News Message",
+
     "checkTheFact": "Check the Fact",
+
+    "CheckWithApp" : "Check your information with a verified fact-checking app before you share it.",
+
     "contact": "Contact",
+
     "coronaFakeNews": "Corona Fake news",
+
+    "Coronavirus" : "Coronavirus",
+
+    "ConspiracyTheory" : "Does the message embrace a conspiracy theory? (for example: “The virus was developed in year X at a weapons lab in country Y.”)",
+
+    "ConfusesAnd" : "confuses and causes damage. Bogus messages spread quickly and act like a virus themselves – we have an “infodemic” on top of a pandemic.",
+
     "dataPrivacyPolicy": "Legal Information",
+
+    "Detect" : "Expose Fake news",
+
     "documents": "Documents",
+
+    "DontShare" : "“Do not share stuff unless you know it’s true”",
+
     "english": " English ",
+
     "enterYourNewsMessage": "Enter your news message at Check the Fact. You can enter:",
+
+    "FakeNewsLooseTheirPower" : "Fake News lose their power if you don’t share them!",
+
     "findAndRefute": "Find and Disprove ",
+
+    "First" : "Educate yourself before you conclude what is really true.",
+
     "german": " German ",
+
     "goldenRules": "Golden Rules",
+
     "green": "Green: Credible. Share it!",
+
     "grey": "Grey: Non-evaluable. Mind our directions!",
+
     "helpsYouToValidate": " helps you to validate corona news before sharing them.",
+
+    "howToEvaluate": "How to Evaluate a News Message?",
+
     "howDoYouDoThat": "How do you do that?",
     "howToEvaluate": "How to Evaluate a News Message?",
     "insertAFile": "Insert a file, text message or link here!",
+
     "introText": "The number of fake news concerning the corona virus is increasing constantly. Many people have difficulties estimating, if a news message is true or false. This can lead to uncertainties and misconduct – with dramatic consequences. ",
+
     "imprint": "Imprint",
+
+    "immunity" : "Does the message present assumptions as facts? (“If enough people get infected, herd immunity develops and it can't spread anymore.”) ",
+
     "isAPlatform": "Check the Fact is a platform on which you can check news and messages for their truthfulness. To achieve this, Check the Facts compares them with qualified sources and expert opinions. If  the message is credible, pass it on. If it’s not, post a clarification.",
+
     "links": "Links",
+
+    "PersonalLevel" : "Is the message trying to address me on a personal level? (“I'm XY's mommy”)",
+
     "pictures": "Pictures",
+
     "red": "Red: Non-credible. Don’t share it! Share the clarification!",
+
+    "ReferenceImages" : "Does the message reference images, videos or voice messages without further details? (“Long queue in front of store X in city Y”).",
+
     "reportFakeMessage": "Report fake message",
+
     "shareTheResult": "Share the result of the evaluation with your contacts to inform them.",
+
     "socialMediaMessages": "Social Media Messages",
+
+    "StoryFromAnotherCountry" : "Is the message telling a story, from another country perhaps? (“In Italy they observed...”)",
+
+    "Statistics" : "Does the message use statistics or statements from supposedly well-known institutions or persons – but without referencing reliable sources? (“10 out of 5 coronavirus sufferers from 2010-2015 ...”)",
+
+    "SimpleReasoning" : "Does the message jump to simplified conclusions? (“Italy has an old population, for the elderly the disease is particularly dangerous. Therefore it is logical that there many old people get sick”)",
+
+    "Simplification" : "Is the statement of the message overly simplified?(“There have always been corona and flu viruses, so the corona effects are not worse than a normal flu outbreak”).",
+
     "text": "Text", 
+
+    "TheseQuestions" : "Which questions can you ask yourself to expose fake news?",
+
+    "TheFloodOf" : "The flood of bogus messages about",
+
+    "TheseAreThe" : "This is how you can stem the flood of fake news and disinformation:",
+    
     "trendingNews": "Trending Clarifications of Corona Fake News",
+
     "trueToTheMotto": "True to the motto: Take care before you share!",
+
     "tweets": "Tweets",
+    
     "unsureIfThisNews": "Unsure if this news message is true? Let us help you!",
+
     "whatsThisAllAbout": "What’s This All About?",
+
     "yellow": "Yellow: Uncertain! Mind our directions!",
+
     "__COMMENT": "PLEASE SORT ALPHABETICALLY, THANK YOU!"
+
 }
