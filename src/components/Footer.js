@@ -5,7 +5,7 @@ import "./Footer.css";
 export default function Footer () {
     const { t } = useTranslation();
     return (
-        <footer className="footer p-3 text-center">
+        <footer className="text-center p-5">
             <div className="row">
                 <div className="col">
                     <a href="/imprint">
@@ -13,15 +13,9 @@ export default function Footer () {
                     </a>
                 </div>
                 <div className="col">
-                    &middot;
-                </div>
-                <div className="col">
                     <a href="/dsgvo">
                         {t('dataPrivacyPolicy')} 
                     </a>
-                </div>
-                <div className="col">
-                    &middot;
                 </div>
                 <div className="col">
                     <a href="/imprint">
