@@ -17,7 +17,7 @@ import Landing from './pages/Landing/Landing';
 import Report from './pages/Report/Report';
 import Imprint from "./pages/Imprint/Imprint";
 import DSGVO from "./pages/DSGVO/DSGVO";
-import authentication from './utils/react-azure-adb2c';
+import authentication from 'react-azure-adb2c';
 import Voting from "./pages/Voting/Voting";
 import Admin from "./pages/Admin/Admin";
 

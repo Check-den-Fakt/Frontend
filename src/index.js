@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import authentication from './utils/react-azure-adb2c';
+import authentication from 'react-azure-adb2c';
 
 authentication.initialize({
     // optional, will default to this
