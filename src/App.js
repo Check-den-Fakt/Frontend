@@ -7,6 +7,7 @@ import {
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import About from './pages/About/About';
 import './i18n';
 import Rules from './pages/Rules/Rules';
 import { Layout } from './components/Layout';
@@ -25,6 +26,9 @@ function App() {
       <Layout>
         <Router>
           <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
             <Route path="/rules">
               <Rules />
             </Route>
@@ -33,7 +37,6 @@ function App() {
             <Route path="/result">
               <Result />
             </Route>
-            <Route path="/teamMapSrc/web/index.htm" onEnter={() => window.location.reload()} />
             <Route path="/check">
               <Check />
             </Route>

@@ -19,7 +19,7 @@ export default function NavMenu () {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/rules">{t('goldenRules')}</Nav.Link>
-            <Nav.Link href="/teamMapSrc/web/index.htm">{t('aboutUs')}</Nav.Link>
+            <Nav.Link href="/about">{t('aboutUs')}</Nav.Link>
           </Nav>
           <LanguageSelector />
         </Navbar.Collapse>

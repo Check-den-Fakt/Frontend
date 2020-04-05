@@ -54,10 +54,10 @@ header {
 
 #myMap {
     position: absolute;
-    top: 65px;
-    left: 350px;
-    width: calc(100vw - 350px);
-    height: calc(100vh - 65px);
+    /* top: 65px;
+    left: 350px;*/
+    width: 100vw;
+    height: 100vh; 
 }
 
 .statusMessage {
