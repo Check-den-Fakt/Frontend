@@ -178,8 +178,7 @@ export default function Landing() {
                     </li>
                   )}
                 </ol>
-            </div>
-
+            </div>  
           </div>
         </div>
 
