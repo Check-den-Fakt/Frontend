@@ -140,13 +140,13 @@ export default function Landing() {
           </span>
           </div>
           <div className="col-9">
-            <h3>2. Ergebnis erhalten</h3>
-            Nach dem Hochladen erhältst du die Auswertung, mit folgenden Möglichkeit:
-            <ul className="purple">
-              <li>Grün: Glaubwürdig. Teilen erwünscht!</li>
-              <li>Gelb: Zweifelhaft! Hinweise beachten!</li>
-              <li>Rot: Unglaubwürdig. Nicht weitergeben! Klarstellen!</li>
-              <li>Grau: Nicht auswertbar. Hinweise beachten!</li>
+            <h3>{t('2.obtainResult')}</h3>
+            {t('afterUploadingYourMessage')}
+            <ul className="purple no-bullets">
+              <li>{t('green')}</li>
+              <li>{t('yellow')}</li>
+              <li>{t('red')}</li>
+              <li>{t('grey')}</li>
             </ul>
           </div>
         </div>

@@ -212,6 +212,10 @@ button:disabled {
   padding-left: 7px;
 }
 
+.no-bullets.purple {
+  padding-left: 0;
+}
+
 .yellow {
   color: #F7CC36;
   font-size: 800% !important;
