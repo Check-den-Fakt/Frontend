@@ -12,8 +12,8 @@ export default function NavMenu () {
       <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
         <Navbar.Brand href="/">
         <img src="/img/header_logo.svg" width="200" className="d-inline-block align-top"
-        alt={t('checkTheFactCheckBeforeYouShare')}
-        title={t('checkTheFactCheckBeforeYouShare')}/>
+        alt={t('checkTheFact')}
+        title={t('checkTheFact')}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
