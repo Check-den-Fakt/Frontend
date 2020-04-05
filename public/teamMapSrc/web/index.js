@@ -6,7 +6,7 @@ var maxClusterZoomLevel = 11;
 var storeLocationDataUrl = 'https://we-checkdenfakt-apimgm.azure-api.net/we-teammap-func/GetTeamMembers';
 
 //The URL to the icon image. 
-var iconImageUrl = 'images/Icon_CheckTheFact_white_circle.png';
+var iconImageUrl = 'images/ctf-icon.svg';
 
 //An array of country region ISO2 values to limit searches to.
 var countrySet = ['AT', 'CH', 'DE'];      
@@ -85,7 +85,7 @@ function initialize() {
         var clusterBubbleLayer = new atlas.layer.BubbleLayer(datasource, null, {
             radius: 12,
             color: '#f7cc37',
-            strokeColor: 'white',
+            strokeColor: '#333',
             strokeWidth: 2,
             filter: ['has', 'point_count'] //Only render data points which have a point_count property, which clusters do.
         });
@@ -100,7 +100,7 @@ function initialize() {
                 size: 12,
                 font: ['StandardFont-Bold'],
                 offset: [0, 0.4],
-                color: 'white'
+                color: '#333'
             }
         });
 
@@ -114,7 +114,7 @@ function initialize() {
                 iconOptions: {
                     //Pass in the id of the custom icon that was loaded into the map resources.
                     image: 'myCustomIcon',
-                    size: 0.025,
+                    size: 0.25,
                     //Optionally scale the size of the icon.
                     font: ['SegoeUi-Bold'],
 
