@@ -1,11 +1,14 @@
 {
     "_KOMMENTAR": "BITTE ALPHABETISCH SORTIEREN, DANKE!",
+    "1.uploadMessage": "1. Nachricht hochladen",
     "aboutUs": "Über uns",
     "checkBeforeYouShare": "Check den Fakt - Erst checken, dann sharen.",
     "checkMessage": "Nachricht überprüfen",
     "checkTheFact": "Check den Fakt",
     "coronaFakeNews": "Corona-Falschnachrichten",
+    "documents": "Dokumente",
     "english": " Englisch ",
+    "enterYourNewsMessage": "Gib deine Nachricht bei Check the Fact ein. Folgende Möglichkeiten hast du:",
     "findAndRefute": "Finde und widerlege ",
     "german": " Deutsch ",
     "goldenRules": "Goldene Regeln",
@@ -14,8 +17,13 @@
     "ifItsTrue": "Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.",
     "introText": "Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. Dabei sind diese Nachrichten teilweise so professionell verfälscht, dass die Bewertung des Wahrheitsgehalts nicht sofort erkennbar ist. Das kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen.",
     "isAPlatform": "ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check the Fact sie mit qualifizierten Expertenmeinungen und Quellen ab. Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.",
+    "links": "Links",
+    "pictures": "Bilder",
     "reportFakeMessage": "Fake Nachricht melden",
+    "socialMediaMessages": "Social Media Messages",
+    "text": "Text", 
     "trueToTheMotto": "Ganz nach dem Motto: Erst klären, dann sharen!", 
+    "tweets": "Tweets",
     "whatsThisAllAbout": "Worum geht’s hier?",
     "__KOMMENTAR": "BITTE ALPHABETISCH SORTIEREN, DANKE!"
 }

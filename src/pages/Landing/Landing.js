@@ -120,13 +120,15 @@ export default function Landing() {
             </span>
           </div>
           <div className="col-9">
-            <h3>1. Nachricht hochladen</h3>
-            Gib deine Nachricht bei Check den Fakt ein. Folgende Möglichkeiten hast du:
+            <h3>{t('1.uploadMessage')}</h3>
+            {t('enterYourNewsMessage')}
             <ul className="purple">
-              <li>Links</li>
-              <li>Freitexteingabe</li>
-              <li>Social Messenger Nachrichten</li>
-              <li>Tweets</li>
+              <li>{t('links')}</li>
+              <li>{t('text')}</li>
+              <li>{t('socialMediaMessages')}</li>
+              <li>{t('tweets')}</li>
+              <li>{t('documents')}</li>
+              <li>{t('pictures')}</li>
             </ul>
           </div>
         </div>
