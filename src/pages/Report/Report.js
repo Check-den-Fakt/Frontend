@@ -67,7 +67,7 @@ export default class Report extends Component {
   render () {
     const { text, isLoading } = this.state;
     return (
-    <div>
+    <div className="mt-5">
       <div className="text-center">
       <h1 className="display-4">Falschnachricht melden</h1>
       <p className="lead">Du hast eine Falschnachricht entdeckt? Teile sie hier mit uns!</p>
