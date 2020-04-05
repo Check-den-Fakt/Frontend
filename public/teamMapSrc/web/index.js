@@ -6,7 +6,7 @@ var maxClusterZoomLevel = 11;
 var storeLocationDataUrl = 'https://we-checkdenfakt-apimgm.azure-api.net/we-teammap-func/GetTeamMembers';
 
 //The URL to the icon image. 
-var iconImageUrl = 'images/Icon_CheckTheFact_white_circle.png';
+var iconImageUrl = 'images/check';
 
 //An array of country region ISO2 values to limit searches to.
 var countrySet = ['AT', 'CH', 'DE'];      
