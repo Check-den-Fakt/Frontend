@@ -376,12 +376,13 @@ function showPopup(shape) {
     var html = ['<div class="storePopup">'];
 
     html.push('<div class="popupTitle">',
+        '<img src="' + properties['ImageUrl'], '"/>',
         properties['Name'],
         '<div class="popupSubTitle">',
         properties['Description'],
         '</div></div><div class="popupContent">',
         getAddressLine2(properties),
-        '<br /><img src="' + properties['ImageUrl'], '"/>'
+        '',
     );
 
     html.push('</div></div>');
