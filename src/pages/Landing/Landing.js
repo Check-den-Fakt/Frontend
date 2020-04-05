@@ -150,28 +150,28 @@ export default function Landing() {
             </ul>
           </div>
         </div>
-
         <div className="row mt-5">
           <div className="col-3">
             <span className="material-icons circle-icon">
               share
-          </span>
+            </span>
           </div>
           <div className="col-9">
-            <h3>3. Auswertung weiterleiten </h3>
-            <p>Teile das Prüfergebnis mit deinen Kontakten, um sie zu informieren.
-          </p>
+            <h3>{t('3.shareTheResult')}</h3>
+            <p>
+              {t('shareTheResult')}
+            </p>
           </div>
         </div>
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-2">
-            <div className="container">
-                <h1>Trending News zu Corona</h1>
+            <div className="container p-5">
+                <h1>{t('trendingNews')}</h1>
                 <ol>
                   {news.map(({ name, url }, index) => 
                     <li key={index}>
                       <p>
-                        <a className="purple" href={url} target="_blank" rel="noopener noreferrer">
+                        <a className="purple" href={url} target="_blank" rel="noopener noreferrer" title={name}>
                           {name}
                         </a>
                       </p>
