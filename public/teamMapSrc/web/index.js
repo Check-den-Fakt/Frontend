@@ -6,10 +6,10 @@ var maxClusterZoomLevel = 11;
 var storeLocationDataUrl = 'https://we-checkdenfakt-apimgm.azure-api.net/we-teammap-func/GetTeamMembers';
 
 //The URL to the icon image. 
-var iconImageUrl = 'images/check';
+var iconImageUrl = 'images/ctf-icon.png';
 
 //An array of country region ISO2 values to limit searches to.
-var countrySet = ['AT', 'CH', 'DE'];      
+var countrySet = ['AT', 'CH', 'DE'];
 
 var map, popup, datasource, iconLayer, centerMarker, searchURL;
 var listItemTemplate = '<div class="listItem" onclick="itemSelected(\'{id}\')"><div class="listItem-title">{name}</div>{title}</br>{city}</div>';
@@ -85,7 +85,7 @@ function initialize() {
         var clusterBubbleLayer = new atlas.layer.BubbleLayer(datasource, null, {
             radius: 12,
             color: '#f7cc37',
-            strokeColor: 'white',
+            strokeColor: '#333',
             strokeWidth: 2,
             filter: ['has', 'point_count'] //Only render data points which have a point_count property, which clusters do.
         });
@@ -100,7 +100,7 @@ function initialize() {
                 size: 12,
                 font: ['StandardFont-Bold'],
                 offset: [0, 0.4],
-                color: 'white'
+                color: '#333'
             }
         });
 
