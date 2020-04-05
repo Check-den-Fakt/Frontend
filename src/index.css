@@ -5,9 +5,9 @@
 
 body {
   color: #565D64 !important;
-  margin: 0 !important;
   font-family: 'Open Sans', sans-serif !important;
   font-size: 13px !important;
+  margin: 0 !important;
   line-height: 20px !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
