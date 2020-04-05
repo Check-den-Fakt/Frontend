@@ -4,23 +4,26 @@ import "./Footer.css";
 
 export default function Footer () {
     const { t } = useTranslation();
-   
     return (
         <footer className="footer p-5">
                 <div className="row">
-                    <div className="col fact-footer-col">
+                    <div className="col">
                         <a href="/imprint">
                             {t('imprint')} 
                         </a>
                     </div>
-                    &middot;
-                    <div className="col fact-footer-col">
+                    <div className="col">
+                        &middot;
+                    </div>
+                    <div className="col">
                         <a href="/dsgvo">
                             {t('dataPrivacyPolicy')} 
                         </a>
                     </div>
-                    &middot;
-                    <div className="col fact-footer-col">
+                    <div className="col">
+                        &middot;
+                    </div>
+                    <div className="col">
                         <a href="/imprint">
                             {t('Contact')}
                         </a>

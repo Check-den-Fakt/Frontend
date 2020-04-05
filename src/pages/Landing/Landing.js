@@ -11,7 +11,7 @@ export default function Landing() {
   const isMobile = window.innerWidth <= 768;
   const [index, setIndex] = useState(0);
   const [news, setNews] = useState([]);
-  const imgSrc = "img/logo-" + i18n.language + ".png";
+  const imgSrc = "img/logo-" + i18n.language + ".svg";
   let mobileImages = null;
   let addText = null;
 
@@ -65,9 +65,9 @@ export default function Landing() {
     </div>
   }
   return (
-    <div className="container">
-        <div className="d-flex justify-content-around mb-5">
-          <img src={imgSrc} width="200" 
+    <div className="container mt-1">
+        <div className="d-flex justify-content-end mb-4">
+          <img src={imgSrc} width="250" 
           alt={t('checkTheFact')}
           title={t('checkTheFact')} />
         </div>
