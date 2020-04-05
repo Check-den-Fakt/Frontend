@@ -54,12 +54,14 @@ export default {
       headers = {
         'Ocp-Apim-Subscription-Key' : "67a029cf86da4384b2b511f577163d72",
         'Authorization' : token,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       };
     }
+
+    console.log(headers)
     const response = await fetch(url, {
       method: 'GET',
-      headers,
+      headers: headers,
     });
 
     let res = null;
