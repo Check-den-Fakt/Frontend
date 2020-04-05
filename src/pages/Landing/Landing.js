@@ -66,8 +66,8 @@ export default function Landing() {
   }
   return (
     <div className="container mt-1">
-        <div className="d-flex justify-content-end mb-4">
-          <img src={imgSrc} width="250" 
+        <div className="d-flex justify-content-around mb-4">
+          <img src={imgSrc} height="250" 
           alt={t('checkTheFact')}
           title={t('checkTheFact')} />
         </div>
