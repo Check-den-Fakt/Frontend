@@ -71,8 +71,8 @@ export default function Landing() {
     <div className="container">
         <div className="d-flex justify-content-around mb-5">
           <img src={imgSrc} width="200" 
-          alt={t('checkTheFactCheckBeforeYouShare')}
-          title={t('checkTheFactCheckBeforeYouShare')} />
+          alt={t('checkTheFact')}
+          title={t('checkTheFact')} />
         </div>
         <h1 className="text-center">
             {t('findAndRefute')}
