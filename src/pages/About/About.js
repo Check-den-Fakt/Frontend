@@ -4,7 +4,7 @@ import './About.css'
 
 export default function About() {
   return (
-      <div className="container">
+      <div className="container my-5">
           <h1>Das Check-den-Fakt-Team stellt sich vor</h1>
           <p>Wir sind ein interdisziplinäres Team, bestehend aus 36 Spezialisten aus aller Welt. Unser Team besteht aus Menschen verschiedenen Alters, Geschlechts und Fachrichtungen, trotz allem haben wir alle dasselbe Ziel.</p>
           <Iframe 

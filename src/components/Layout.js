@@ -10,7 +10,7 @@ export class Layout extends Component {
     return (
       <div>
         <NavMenu />
-        <Container className="mt-5 fact-layout">
+        <Container className="fact-layout">
           {this.props.children}
         </Container>
         <Footer />

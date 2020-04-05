@@ -3,7 +3,7 @@ import React from 'react';
 export default function Imprint() {
   // Declare a new state variable, which we'll call "count"
   return (
-    <div>
+    <div className="mt-5">
         <h1>Impressum</h1>
 
         <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
