@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AzureAD} from "react-aad-msal";
+// import {AzureAD} from "react-aad-msal";
 import {authProvider} from "../../utils/authProvider";
 import fetchAPI from "../../utils/fetchAPI";
 
@@ -45,25 +45,26 @@ export default class Admin extends Component {
     render() {
         const {key, trustedPublisher} = this.state;
         // Declare a new state variable, which we'll call "count"
-        return (
-            <AzureAD provider={authProvider} forceLogin={true}>
-                <Tabs
-                    id="controlled-tab-example"
-                    activeKey={key}
-                    onSelect={(k) => this.activateTab(k)}
-                >
-                    <Tab eventKey="trustedPublisher" title="Trusted Publisher">
-                        <TrustedPublisher data={trustedPublisher} reload={this.getTrustedPublisher}/>
-                    </Tab>
-                    <Tab eventKey="FakeNewReport" title="Fake New Reports">
-                        <span>Not implement yet</span>
-                    </Tab>
-                    <Tab eventKey="TeamMaps" title="Team Maps">
-                        <span>Not implement yet</span>
-                    </Tab>
-                </Tabs>
-            </AzureAD>
-        );
+        return ( <pan>Not Implemented Yet</pan>)
+        // return (
+        //     <AzureAD provider={authProvider} forceLogin={true}>
+        //         <Tabs
+        //             id="controlled-tab-example"
+        //             activeKey={key}
+        //             onSelect={(k) => this.activateTab(k)}
+        //         >
+        //             <Tab eventKey="trustedPublisher" title="Trusted Publisher">
+        //                 <TrustedPublisher data={trustedPublisher} reload={this.getTrustedPublisher}/>
+        //             </Tab>
+        //             <Tab eventKey="FakeNewReport" title="Fake New Reports">
+        //                 <span>Not implement yet</span>
+        //             </Tab>
+        //             <Tab eventKey="TeamMaps" title="Team Maps">
+        //                 <span>Not implement yet</span>
+        //             </Tab>
+        //         </Tabs>
+        //     </AzureAD>
+        // );
     }
 }
 
