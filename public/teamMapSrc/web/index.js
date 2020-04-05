@@ -6,10 +6,10 @@ var maxClusterZoomLevel = 11;
 var storeLocationDataUrl = 'https://we-checkdenfakt-apimgm.azure-api.net/we-teammap-func/GetTeamMembers';
 
 //The URL to the icon image. 
-var iconImageUrl = 'images/ctf-icon.png';
+var iconImageUrl = 'images/ctf-icon.svg';
 
 //An array of country region ISO2 values to limit searches to.
-var countrySet = ['AT', 'CH', 'DE'];
+var countrySet = ['AT', 'CH', 'DE'];      
 
 var map, popup, datasource, iconLayer, centerMarker, searchURL;
 var listItemTemplate = '<div class="listItem" onclick="itemSelected(\'{id}\')"><div class="listItem-title">{name}</div>{title}</br>{city}</div>';
@@ -114,7 +114,7 @@ function initialize() {
                 iconOptions: {
                     //Pass in the id of the custom icon that was loaded into the map resources.
                     image: 'myCustomIcon',
-                    size: 0.025,
+                    size: 0.25,
                     //Optionally scale the size of the icon.
                     font: ['SegoeUi-Bold'],
 
