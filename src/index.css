@@ -234,6 +234,14 @@ button:disabled {
   font-size: 20px !important;
 }
 
+.vote-btn{
+  font-size: 50px !important;
+}
+
+.vote-btn-text{
+  color: black !important;
+}
+
 
 
 /*Logo Carousel for mobile and Logo wall for desktop*/
@@ -310,7 +318,13 @@ a.purple {
   font-size: 800% !important;
 }
 
+.green {
+  color: #6fcf97 !important;
+}
 
+.red {
+  color: #cf6f6f !important;
+}
 
 
 
