@@ -31,22 +31,23 @@ export default function Landing() {
   };
 
   if (i18n.language === "en") {
-    addText = <div><br/><strong>
+    addText = <span><br/><br/><strong>
       {t('checkTheFact')}</strong>
-      {t('helpsYouToValidate')}</div>;
+      {t('helpsYouToValidate')}</span>;
   }
 
   if (isMobile) {
     mobileImages = <div className="text-center pt-5">
       <Carousel activeIndex={index} onSelect={handleSelect}>
-      {partnerLogos.map(({ src, alt }) => 
-      <Carousel.Item>
+      {partnerLogos.map(({ src, alt }, id) => 
+      <Carousel.Item key={id}>
          <div className="img-container">
           <img
             className="carousel-img"
             src={src}
             alt={alt}
             title={alt}
+            key={id}
           />
           </div>
       </Carousel.Item>
@@ -101,17 +102,17 @@ export default function Landing() {
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-1">
             <div className="container p-5">
-            <h2>{t('whatsThisAllAbout')}</h2>
-            <p>
-              {t('checkTheFact')} {t('isAPlatform')}
-            </p>
-            <p>
-              {t('trueToTheMotto')}
-            </p>
+              <h2>{t('whatsThisAllAbout')}</h2>
+              <p>
+                {t('checkTheFact')} {t('isAPlatform')}
+              </p>
+              <p>
+                {t('trueToTheMotto')}
+              </p>
             </div>
-            </div>
+          </div>
         </div>
-        <h1>So prüfst Du Deine Nachricht.</h1>
+        <h1>{t('howToEvaluate')}</h1>
         <div className="row mt-5 pt-3">
           <div className="col-3">
             <span className="material-icons circle-icon">
@@ -165,11 +166,15 @@ export default function Landing() {
             <div className="container">
                 <h1>Trending News zu Corona</h1>
                 <ol>
-                  
-                {news.map(({ name, url }, index) => <li key={index}>
-                  <p><a className="purple" href={url} target="_blank" rel="noopener noreferrer">{name}</a></p>
-                  </li>)}
-               
+                  {news.map(({ name, url }, index) => 
+                    <li key={index}>
+                      <p>
+                        <a className="purple" href={url} target="_blank" rel="noopener noreferrer">
+                          {name}
+                        </a>
+                      </p>
+                    </li>
+                  )}
                 </ol>
             </div>
 
