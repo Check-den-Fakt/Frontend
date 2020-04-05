@@ -48,12 +48,12 @@ export default {
     if (response === undefined) return response;
     return await response.json(); // parses JSON response into native JavaScript objects
   },
-  getData: async (url = '', adb2cToken = '') => {
+  getData: async (url = '', token = '') => {
     let headers = {};
-    if(adb2cToken){
+    if(token){
       headers = {
         'Ocp-Apim-Subscription-Key' : "67a029cf86da4384b2b511f577163d72",
-        'Authorization' : adb2cToken,
+        'Authorization' : token,
         'Content-Type': 'application/json'
       };
     }
