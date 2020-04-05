@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { AddNews } from '../../components/AddNews';
+import AddNews from '../../components/AddNews';
 import Result from '../Result/Result';
 import fetchAPI from '../../utils/fetchAPI';
+import { useTranslation } from 'react-i18next';
 
-export default function Check() {
+export default function Check () {
+  const { t } = useTranslation();
   const [checkResult, setCheckResult] = useState(null);
   const [detailedResult, setDetailedResult] = useState(null);
   const [requestData, setRequestData] = useState(null);
@@ -52,16 +54,13 @@ export default function Check() {
         }
         detailedScores["KI score"] = searchResponse.maxValue;
       }
-      
-    }
-    else if (data.url){ 
+    } else if (data.url) { 
       const trustedPubResponse = await fetchAPI.postData("https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-web", {uri: data.url});
       if (trustedPubResponse){
         overallScore = trustedPubResponse.trustScore;
         detailedScores["Trusted publisher score"] = trustedPubResponse.trustScore;
         setVerifiable(true);
-      }
-      else {
+      } else {
         overallScore = 0.0;
         setVerifiable(false);
       }
@@ -71,20 +70,27 @@ export default function Check() {
     setDetailedResult(detailedScores);
   } 
 
-  // Declare a new state variable, which we'll call "count"
   return (
-    <>
-      {detailedResult ? <Result verifable={verifiable} requestData={requestData} overallScore={checkResult} detailedResult={detailedResult} /> : <div>
-        <div className="text-center">
-        <h1>Check deine Corona-News</h1>
-        <p className="lead">Du bist Dir nicht sicher, ob eine Nachricht wahr ist? Wir helfen Dir!</p>
-        </div>
+    <div className="text-center mt-5">
+      {detailedResult ? <Result verifable={verifiable} requestData={requestData} overallScore={checkResult} detailedResult={detailedResult} /> : 
+        <div>
+          <h1>
+            {t('checkCoronaMessage')}
+          </h1>
+          <p className="lead">
+            {t('unsureIfThisNews')}
+          </p>
         <div className="d-flex justify-content-center my-n4">
-        <div className="polygon background-color-2">
-          <AddNews onSubmit={handleSendData}/>
-        </div>
+          <div className="polygon background-color-2">
+            <AddNews onSubmit={handleSendData}/>
+          </div>
         </div>
       </div>}
-    </>
+      <p className="mb-5">
+        <a href="./about" className="purple">
+          <strong>{t('howDoYouDoThat')}</strong>
+        </a>
+      </p>
+    </div>
   );
 }

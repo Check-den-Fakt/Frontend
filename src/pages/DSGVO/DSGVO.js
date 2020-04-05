@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default function DSGVO() {
-  // Declare a new state variable, which we'll call "count"
+  
   return (
-    <div className="no-bullets">
+    <div className="no-bullets mt-5">
         <h1>Datenschutzerklärung</h1>
         <h2>Einleitung</h2>
         <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer
