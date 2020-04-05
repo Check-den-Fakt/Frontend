@@ -3,12 +3,18 @@ import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
 import Carousel from 'react-bootstrap/Carousel';
 import partnerLogos from './partner_img.json';
+import { useTranslation, getI18n } from 'react-i18next';
 
 export default function Landing() {
+  const { t } = useTranslation();
   const isMobile = window.innerWidth <= 768;
   const [index, setIndex] = useState(0);
   const [news, setNews] = useState([]);
+  const i18n = getI18n();
+  const imgSrc = "img/logo-" + i18n.language + ".png";
   let mobileImages = null;
+  let addText = null;
+  
   useEffect(() => {
     async function fetchData() {
       // You can await here
@@ -20,64 +26,74 @@ export default function Landing() {
     fetchData();
   }, []); // Or [] if effect doesn't need props or state
   
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
 
+  if (i18n.language === "en") {
+    addText = <div><br/><strong>
+      {t('checkTheFact')}</strong>
+      {t('helpsYouToValidate')}</div>;
+  }
 
-  if(isMobile){
-    mobileImages =<div className="text-center pt-5">
+  if (isMobile) {
+    mobileImages = <div className="text-center pt-5">
       <Carousel activeIndex={index} onSelect={handleSelect}>
-      {partnerLogos.map(({ src, alt }, id) => 
+      {partnerLogos.map(({ src, alt }) => 
       <Carousel.Item>
          <div className="img-container">
           <img
             className="carousel-img"
             src={src}
             alt={alt}
+            title={alt}
           />
           </div>
       </Carousel.Item>
       )}
       </Carousel>
     </div>
-  }
-  else {
+  } else {
     mobileImages = <div className="text-center">
       <div className="w-100">
-      {partnerLogos.map(({ src, alt }, id) => 
+      {partnerLogos.map(({ src, alt }) => 
           <img className="logo-wall"
             src={src}
             alt={alt}
+            title={alt}
           />
       )}
             </div>
       </div>
   }
 
-
-  // Declare a new state variable, which we'll call "count"
   return (
     <div className="container">
         <div className="d-flex justify-content-around mb-5">
-          <img src="/img/logo.svg" width="200em" height="200em" alt="Check den Fakt - Erst klären, dann sharen." />
+          <img src={imgSrc} width="200" 
+          alt={t('checkTheFact')}
+          title={t('checkTheFact')} />
         </div>
-        <h1 className="text-center">Finde und widerlege <nobr>Corona-Falschnachrichten</nobr></h1>
+        <h1 className="text-center">
+            {t('findAndRefute')}
+            <nobr>
+              {t('coronaFakeNews')}
+            </nobr>
+        </h1>
         <p className="text-center">
-        Die Anzahl an Falschmeldungen zum Coronavirus steigt immer weiter an. 
-        Dabei sind diese Nachrichten teilweise so professionell verfälscht, dass die Bewertung des Wahrheitsgehalts nicht sofort erkennbar ist.
-        Das kann zu Unsicherheiten und Fehlverhalten führen – manchmal mit dramatischen Folgen.
+          {t('introText')}
+          {addText}
         </p>
-        <div className="center mt-5">
+        <div className="center">
           <div className="row">
             <div className="col-sm m-2">
             <Button href="/check" variant="primary" block className="py-3">
-              <b>Nachricht überprüfen</b>
+              <b>{t('checkMessage')}</b>
             </Button>
             </div>
             <div className="col-sm m-2">
             <Button href="/report" variant="secondary" block className="py-3">
-              <b>Falschnachricht melden</b>
+              <b>{t('reportFakeMessage')}</b>
             </Button>
             </div>
           </div>
@@ -85,10 +101,11 @@ export default function Landing() {
         <div className="d-flex justify-content-center">
           <div className="polygon background-color-1">
             <div className="container">
-            <h2>Worum geht’s hier?</h2>
+            <h2>{t('whatsThisAllAbout')}</h2>
             <p>
-              Check den Fakt ist ein Portal, auf dem du Nachrichten auf ihren Wahrheitsgehalt prüfen lassen kannst. Dazu gleicht Check den Fakt sie mit qualifizierten Expertenmeinungen und Quellen ab.<br/><br/>
-              Ist die Nachricht glaubwürdig, teile sie. Wenn nicht, poste eine Klarstellung.
+              {t('checkTheFact')} {t('isAPlatform')}
+              <br/><br/>
+              {t('ifIsTrue')}
             </p>
             <p>
               Ganz nach dem Motto: Erst klären, dann sharen!
