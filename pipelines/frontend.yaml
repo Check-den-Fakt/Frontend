@@ -44,6 +44,7 @@ stages:
         customCommand: 'run build'
 
     - task: AzureFileCopy@3
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
       inputs:
         SourcePath: '$(Build.SourcesDirectory)/build/'
         azureSubscription: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)-5784'
