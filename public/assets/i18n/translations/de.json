@@ -131,7 +131,9 @@
     "tweets": "Tweets",
 
     "unsureIfThisNews": "Du bist Dir nicht sicher, ob eine Nachricht wahr ist? Wir helfen Dir!",
-
+    
+    "vote" : "FakeNews bewerten",
+    
     "whatsThisAllAbout": "Worum geht’s hier?",
 
     "yellow": "Gelb: Zweifelhaft! Hinweise beachten!",
