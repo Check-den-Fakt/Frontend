@@ -20,6 +20,7 @@ export default function NavMenu () {
           <Nav className="mr-auto">
             <Nav.Link href="/rules">{t('goldenRules')}</Nav.Link>
             <Nav.Link href="/about">{t('aboutUs')}</Nav.Link>
+            <Nav.Link href="/voting">{t('vote')}</Nav.Link>                
           </Nav>
           <LanguageSelector />
         </Navbar.Collapse>
