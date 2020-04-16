@@ -5,6 +5,11 @@ import {
   Route
 } from "react-router-dom";
 
+// App Insights
+import { ApplicationInsights } from '@microsoft/applicationinsights-web';
+import { ReactPlugin, withAITracking } from '@microsoft/applicationinsights-react-js';
+import { createBrowserHistory } from "history";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import About from './pages/About/About';
@@ -20,6 +25,19 @@ import DSGVO from "./pages/DSGVO/DSGVO";
 import authentication from 'react-azure-adb2c';
 import Voting from "./pages/Voting/Voting";
 import Admin from "./pages/Admin/Admin";
+
+const browserHistory = createBrowserHistory({ basename: '' });
+var reactPlugin = new ReactPlugin();
+var appInsights = new ApplicationInsights({
+    config: {
+        instrumentationKey: 'aebb34ec-a08b-4f46-a982-cc9683a9ee25',
+        extensions: [reactPlugin],
+        extensionConfig: {
+          [reactPlugin.identifier]: { history: browserHistory }
+        }
+    }
+});
+appInsights.loadAppInsights();
 
 function App() {
   return (
