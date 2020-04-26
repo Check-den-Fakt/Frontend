@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@microsoft/applicationinsights-react-js": "^2.5.4",
+    "@microsoft/applicationinsights-web": "^2.5.4",
     "bootstrap": "^4.4.1",
     "i18next": "^19.3.4",
     "i18next-xhr-backend": "^3.2.2",
