@@ -1,30 +1,82 @@
-// import {MsalAuthProvider, LoginType} from 'react-aad-msal';
-//
-// const config = {
-//     auth: {
-//         authority: 'https://login.microsoftonline.com/WirVsVirusKommunikation.onmicrosoft.com',
-//         clientId: 'ff72bf0d-1f31-43e2-ba44-fa0cb5bb16a0',
-//         redirectUri: `${window.location.origin}/auth.html`,
-//     },
-//     cache: {
-//         cacheLocation: 'sessionStorage',
-//         storeAuthStateInCookie: false,
-//     },
-// };
-//
-// const options = {
-//     loginType: LoginType.Popup,
-//     tokenRefreshUri: `${window.location.origin}/auth.html`,
-// }
-//
-// const authenticationParameters = {
-//     scopes: ['User.Read'],
-// };
-//
-// export const authProvider = new MsalAuthProvider(config, authenticationParameters, options);
-//
+import * as Msal from "msal";
+
+export const InstanceType = {
+    COMMUNITY: 'community',
+    ADMIN: 'admin',
+}
+
+const msalConfigCommunity = {
+    auth: {
+        clientId: '66d12240-58e5-479c-82f5-e1a31d851727',
+        authority: 'https://checkdenfaktb2c.b2clogin.com/CheckDenFaktB2C.onmicrosoft.com/b2c_1_signup-signin',
+        validateAuthority: false,
+        scopes: ['openid'],
+    },
+    cache: {
+        cacheLocation: "sessionStorage",
+        storeAuthStateInCookie: false,
+    }
+};
+
+const msalConfigAdmin = {
+    auth: {
+        clientId: 'ff72bf0d-1f31-43e2-ba44-fa0cb5bb16a0',
+        authority: 'https://login.microsoftonline.com/WirVsVirusKommunikation.onmicrosoft.com',
+        scopes: ['openid'],
+    },
+    cache: {
+        cacheLocation: "sessionStorage",
+        storeAuthStateInCookie: false,
+    }
+};
+
+const loginRequestAdmin = {
+    scopes: ['User.Read'],
+}
+
+const loginRequestCommunity = {
+    scopes: ['openid'],
+};
+
+const getMsalInstance = (instanceType) => instanceType === InstanceType.ADMIN ? msalAdmin : msalCommunity;
+const getLoginRequest= (instanceType) => instanceType === InstanceType.ADMIN ? loginRequestAdmin : loginRequestCommunity;
+const getConfig = (instanceType) => instanceType === InstanceType.ADMIN ? msalConfigAdmin : msalConfigCommunity;
+
+const token = async (instanceType) => {
+    const msalInstance = getMsalInstance(instanceType);
+    const scopes =  instanceType === InstanceType.COMMUNITY ? loginRequestCommunity : loginRequestAdmin;
+    let response;
+    try {
+        response = await msalInstance.acquireTokenSilent(scopes);
+    } catch(err) {
+        if (err.name === "InteractionRequiredAuthError") {
+            try {
+                response = await msalInstance.acquireTokenPopup(scopes)
+            } catch (e) {
+                console.log('could not get token',e, err);
+                return;
+            }
+        }
+    }
+    return response && response.accessToken;
+};
+
+const isAuthenticated = (instanceType) => {
+    const msalInstance = getMsalInstance(instanceType);
+    const config = getConfig(instanceType);
+    const user = msalInstance.getAccount();
+    return !!user && user.idTokenClaims.aud === config.auth.clientId;
+}
+
+
+
+const msalCommunity = new Msal.UserAgentApplication(msalConfigCommunity);
+
+const msalAdmin = new Msal.UserAgentApplication(msalConfigAdmin);
 
 export const authProvider = {
-    getAccessToken: ()=>{},
+    getMsalInstance: (instanceType) => getMsalInstance(instanceType),
+    getLoginRequest: (instanceType) => getLoginRequest(instanceType),
+    getAccessToken: async (instanceType) => token(instanceType),
+    isAuthenticated: (instanceType) => isAuthenticated(instanceType),
 }
-// https://localhost:44333/signin-oidc
