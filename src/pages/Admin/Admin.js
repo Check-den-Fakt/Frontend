@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-// import {AzureAD} from "react-aad-msal";
-import {authProvider} from "../../utils/authProvider";
+import {authProvider, InstanceType} from "../../utils/authProvider";
 import fetchAPI from "../../utils/fetchAPI";
 
 import Tabs from "react-bootstrap/Tabs";
@@ -19,10 +18,10 @@ export default class Admin extends Component {
     getTrustedPublisher = async () => {
         this.setState({isLoading: true});
 
-        const token = await authProvider.getAccessToken();
+        const token = await authProvider.getAccessToken(InstanceType.ADMIN);
         let response = null;
         try {
-            response = await fetchAPI.getData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/GetAllPublisher`, token.accessToken)
+            response = await fetchAPI.getData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/GetAllPublisher`, token)
         } catch (e) {
             this.setState({isLoading: false})
         } finally {
@@ -39,32 +38,29 @@ export default class Admin extends Component {
     }
 
     componentDidMount() {
-        // this.getTrustedPublisher();
+        this.getTrustedPublisher();
     }
 
     render() {
         const {key, trustedPublisher} = this.state;
         // Declare a new state variable, which we'll call "count"
-        return ( <pan>Not Implemented Yet</pan>)
-        // return (
-        //     <AzureAD provider={authProvider} forceLogin={true}>
-        //         <Tabs
-        //             id="controlled-tab-example"
-        //             activeKey={key}
-        //             onSelect={(k) => this.activateTab(k)}
-        //         >
-        //             <Tab eventKey="trustedPublisher" title="Trusted Publisher">
-        //                 <TrustedPublisher data={trustedPublisher} reload={this.getTrustedPublisher}/>
-        //             </Tab>
-        //             <Tab eventKey="FakeNewReport" title="Fake New Reports">
-        //                 <span>Not implement yet</span>
-        //             </Tab>
-        //             <Tab eventKey="TeamMaps" title="Team Maps">
-        //                 <span>Not implement yet</span>
-        //             </Tab>
-        //         </Tabs>
-        //     </AzureAD>
-        // );
+        return (
+            <Tabs
+                id="controlled-tab-example"
+                activeKey={key}
+                onSelect={(k) => this.activateTab(k)}
+            >
+                <Tab eventKey="trustedPublisher" title="Trusted Publisher">
+                    <TrustedPublisher data={trustedPublisher} reload={this.getTrustedPublisher}/>
+                </Tab>
+                <Tab eventKey="FakeNewReport" title="Fake New Reports">
+                    <span>Not implement yet</span>
+                </Tab>
+                <Tab eventKey="TeamMaps" title="Team Maps">
+                    <span>Not implement yet</span>
+                </Tab>
+            </Tabs>
+        );
     }
 }
 
@@ -77,14 +73,13 @@ export class TrustedPublisher extends Component {
 
     handleClose = async () => {
         const {publisher, saveFunction} = this.state;
-        const token = await authProvider.getAccessToken();
-        this.setState({show: false })
-        if(!!publisher.Url && !!publisher.Reason && !!publisher.TrustScore) {
-            try{
-                await fetchAPI.postData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/${saveFunction}`, publisher, token.accessToken)
-            }
-            catch (e) {
-                this.setState({isLoading: false })
+        const token = await authProvider.getAccessToken(InstanceType.ADMIN);
+        this.setState({show: false})
+        if (!!publisher.Url && !!publisher.Reason && !!publisher.TrustScore) {
+            try {
+                await fetchAPI.postData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/${saveFunction}`, publisher, token)
+            } catch (e) {
+                this.setState({isLoading: false})
             } finally {
                 this.setState({isLoading: false, publisher: {}, saveFunction: ''});
                 this.props.reload();
@@ -93,16 +88,15 @@ export class TrustedPublisher extends Component {
     };
 
     remove = async (row) => {
-        const token = await authProvider.getAccessToken();
+        const token = await authProvider.getAccessToken(InstanceType.ADMIN);
         const publisher = {
             PartitionKey: row.partitionKey,
             RowKey: row.rowKey,
         };
-        try{
-            await fetchAPI.postData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/DeleteTrustedPublisher`, publisher, token.accessToken)
-        }
-        catch (e) {
-            this.setState({isLoading: false })
+        try {
+            await fetchAPI.postData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/DeleteTrustedPublisher`, publisher, token)
+        } catch (e) {
+            this.setState({isLoading: false})
         } finally {
             this.setState({isLoading: false, publisher: {}, saveFunction: ''});
             this.props.reload();
@@ -132,8 +126,9 @@ export class TrustedPublisher extends Component {
     handleChange = e => {
         const {publisher} = this.state;
         publisher[e.target.name] = e.target.value;
-        this.setState({ publisher: publisher});
+        this.setState({publisher: publisher});
     };
+
     render() {
         const {data} = this.props;
         const {show} = this.state;

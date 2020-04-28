@@ -18,10 +18,14 @@ export default function Landing() {
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const response = await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-komnews-fa/GetNews', {
-        query : "corona"
-      });
-      setNews(response.news.value);
+      try {
+        const response = await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-komnews-fa/GetNews', {
+          query : "corona"
+        });
+        setNews(response.news.value);
+      } catch (e) {
+        console.error('error');
+      }
     }
     fetchData();
   }, []); // Or [] if effect doesn't need props or state

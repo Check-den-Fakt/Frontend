@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
-import authentication from 'react-azure-adb2c'
+import {authProvider, InstanceType} from "../../utils/authProvider";
 
 window.id = 0;
 
@@ -17,7 +17,7 @@ export default class Voting extends Component {
   };
 
   handleSubmit = async (status) => {
-    const adb2cToken = authentication.getAccessToken();
+    const adb2cToken = await authProvider.getAccessToken(InstanceType.COMMUNITY);
     const { news } = this.state;
     const type = status ? 'Up' : 'Down';
     const body = {
@@ -39,7 +39,7 @@ export default class Voting extends Component {
   getNews = async () => {
     const {offset} = this.state;
     this.setState({isLoading: true});
-    const adb2cToken = authentication.getAccessToken();
+    const adb2cToken = await authProvider.getAccessToken(InstanceType.COMMUNITY);
     const query = offset === 0 ? 'GetOne' : `GetNext?offset=${offset}`;
     let response = null;
     try{

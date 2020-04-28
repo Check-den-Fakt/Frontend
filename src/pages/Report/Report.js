@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
-import authentication from 'react-azure-adb2c'
-
-//import Reaptcha from 'reaptcha';
+import {authProvider, InstanceType} from "../../utils/authProvider";
 
 window.id = 0;
 
@@ -51,7 +49,7 @@ export default class Report extends Component {
     for(let elem in this.state.tempSources){
       this.state.sources.push(this.state.tempSources[elem].source)      
     }
-    const adb2cToken = authentication.getAccessToken();
+    const adb2cToken = await authProvider.getAccessToken(InstanceType.COMMUNITY);
     this.setState({ isLoading: true });
     try {
       console.log("Post", { Content: this.state.text, Sources: this.state.sources })

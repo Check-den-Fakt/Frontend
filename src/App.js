@@ -17,9 +17,10 @@ import Landing from './pages/Landing/Landing';
 import Report from './pages/Report/Report';
 import Imprint from "./pages/Imprint/Imprint";
 import DSGVO from "./pages/DSGVO/DSGVO";
-import authentication from 'react-azure-adb2c';
 import Voting from "./pages/Voting/Voting";
 import Admin from "./pages/Admin/Admin";
+import Auth from "./components/Auth";
+import {InstanceType} from "./utils/authProvider";
 
 function App() {
   return (
@@ -33,10 +34,20 @@ function App() {
             <Route path="/rules">
               <Rules />
             </Route>
-            <Route exact path="/report" component={authentication.required(Report)} />
-            <Route exact path="/voting" component={authentication.required(Voting)} />
-            <Route exact path="/admin">
-              <Admin/>
+            <Route path="/report">
+              <Auth type={InstanceType.COMMUNITY}>
+                <Report/>
+              </Auth>
+            </Route>
+            <Route path="/voting">
+              <Auth type={InstanceType.COMMUNITY}>
+                <Voting/>
+              </Auth>
+            </Route>
+            <Route path="/admin">
+              <Auth type={InstanceType.ADMIN}>
+                <Admin/>
+              </Auth>
             </Route>
             <Route path="/result">
               <Result />
