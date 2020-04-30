@@ -9,7 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '144e7092-f976-4fc0-bf0e-57e2de0863ed'
+  azureSubscription: '3fbd9eb7-31fc-4339-8fd8-8333603d58d4'
   
   # Environment name
   environmentName: 'prod'
@@ -47,8 +47,8 @@ stages:
       condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
       inputs:
         SourcePath: '$(Build.SourcesDirectory)/build/'
-        azureSubscription: 'Azure Pass – Sponsorship (db59ff20-bbda-4c19-a433-d5f11767ea07)-5784'
+        azureSubscription: 'sub-prod-westeurope-001(3fbd9eb7-31fc-4339-8fd8-8333603d58d4)'
         Destination: 'AzureBlob'
-        storage: 'wekomfrontsa'
+        storage: 'stfrontendprodwe001'
         ContainerName: '$web'
         cleanTargetBeforeCopy: true
