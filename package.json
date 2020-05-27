@@ -7,6 +7,7 @@
     "@microsoft/applicationinsights-web": "^2.5.4",
     "bootstrap": "^4.4.1",
     "i18next": "^19.3.4",
+    "i18next-browser-languagedetector": "^4.1.1",
     "i18next-xhr-backend": "^3.2.2",
     "material-design-icons": "^3.0.1",
     "react": "^16.13.1",
