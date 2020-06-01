@@ -6,10 +6,9 @@ import i18next from 'i18next';
 let en_chk = false;
 let de_chk = false;
 
-if(i18next.options.lng=="de"){
+if(i18next.options.lng.substring(0,2)=="de"){
   de_chk = true;
   en_chk = false;
-
 } else {
   de_chk = false;
   en_chk = true;

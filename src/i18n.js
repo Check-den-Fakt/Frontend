@@ -8,6 +8,7 @@ i18n
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
+    load : "languageOnly",
     lng: navigator.language || navigator.userLanguage,
     backend: {
       /* translation file path */
@@ -27,7 +28,7 @@ i18n
       wait: true
     },
     detection: {
-      order: ['cookie', 'localStorage'],
+      order: ['cookie',"navigator", 'localStorage'],
       lookupCookie: 'i18next',
       lookupLocalStorage: 'i18nextLng',
       caches: ['localStorage', 'cookie'],
