@@ -3,10 +3,12 @@ import { NavLink } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
 import './Result.css';
 import { ProgressBar, Card } from 'react-bootstrap';
-// import ShareButtons from '../../components/ShareButtons';
-// import ResultDetails from './ResultDetails';
 
-export default function Result({verifable, overallScore, requestData }) {
+import { Chart } from "react-google-charts";
+
+// import ShareButtons from '../../components/ShareButtons';
+
+export default function Result({ verifable, overallScore, requestData, detailedResult }) {
   const trustScore = Math.round(overallScore * 100) / 100
   //console.log("The result functions score",trustScore)
   // Declare a new state variable, which we'll call "count"
@@ -14,137 +16,208 @@ export default function Result({verifable, overallScore, requestData }) {
   let bgClass = '';
 
   let foundationDate = new Date("March 20, 2020 24:00:00").getTime();
-  let nowDate = new Date().getTime(); 
+  let nowDate = new Date().getTime();
   var deltaT = nowDate - foundationDate;
   var deltaDays = Math.floor(deltaT / (1000 * 60 * 60 * 24));
+
+  if (detailedResult.publisher){
+    console.log("Object is true",detailedResult.publisher)
+  }
 
   if (verifable) {
     if (trustScore > 0.70) {
       bgClass = 'bg-color-success';
       content = <Card className="cart-top-margin">
         <Card.Body className="shadow">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-11">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-11">
                 <Card.Title><b>{trustScore * 100}% glaubwürdig</b></Card.Title>
-                <ProgressBar variant="success" now={trustScore * 100} class="inline" />
+                <ProgressBar variant="success" now={trustScore * 100} className="inline" />
               </div>
-              <div class="col-sm-1">
+              <div className="col-sm-1">
                 <span className="material-icons success">
-                    check_circle
+                  check_circle
                 </span>
               </div>
             </div>
           </div>
           <Card.Text className="cart-top-margin">
-          <b>check-den-fakt.de</b> Prüfung konnte seriöse Quellen bestätigen. Du kannst die Nachricht teilen.
+            <b>check-den-fakt.de</b> Prüfung konnte seriöse Quellen bestätigen. Du kannst die Nachricht teilen.
           </Card.Text>
         </Card.Body>
       </Card>
-    } 
-    else if (trustScore > 0.35){
+    }
+    else if (trustScore > 0.35) {
       bgClass = 'bg-color-warning';
       content = <Card>
-      <Card.Body>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-11">
-              <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
-              <ProgressBar variant="warning" now={trustScore * 100} />
-            </div>
-            <div class="col-sm-1">
-            <span className="material-icons undef">
-                live_help
+        <Card.Body>
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-11">
+                <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
+                <ProgressBar variant="warning" now={trustScore * 100} />
+              </div>
+              <div className="col-sm-1">
+                <span className="material-icons undef">
+                  live_help
             </span>
+              </div>
             </div>
           </div>
-        </div>
-        <Card.Text className="cart-top-margin">
-          <b>check-den-fakt.de</b> Prüfung ist sich nicht ganz sicher. Bitte leite diese Nachricht nicht weiter. Helfe uns besser zu werden und reiche diese Nachricht ein und teile uns mit was du über diese denkst.
+          <Card.Text className="cart-top-margin">
+            <b>check-den-fakt.de</b> Prüfung ist sich nicht ganz sicher. Bitte leite diese Nachricht nicht weiter. Helfe uns besser zu werden und reiche diese Nachricht ein und teile uns mit was du über diese denkst.
         </Card.Text>
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
     }
-    
+
     else {
       bgClass = 'bg-color-error';
       content = <Card>
-      <Card.Body>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-11">
-              <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
-              <ProgressBar variant="danger" now={trustScore * 100} />
-            </div>
-            <div class="col-sm-1">
-              <span className="material-icons danger">
+        <Card.Body>
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-11">
+                <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
+                <ProgressBar variant="danger" now={trustScore * 100} />
+              </div>
+              <div className="col-sm-1">
+                <span className="material-icons danger">
                   cancel
               </span>
+              </div>
             </div>
           </div>
-        </div>
-        <Card.Text className="cart-top-margin">
-          <b>check-den-fakt.de</b> Prüfung konnte kaum seriöse Quellen bestätigen. Bitte leite diese Nachricht nicht weiter.Nachricht bestätigen. Bitte leite sie nicht weiter.
+          <Card.Text className="cart-top-margin">
+            <b>check-den-fakt.de</b> Prüfung konnte kaum seriöse Quellen bestätigen. Bitte leite diese Nachricht nicht weiter.Nachricht bestätigen. Bitte leite sie nicht weiter.
         </Card.Text>
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
     }
   } else {
     bgClass = 'bg-color-warning';
     content = <Card>
-    <Card.Body>
-      <div>
-        <div class="row">
-          <div class="col-sm-11">
-            <Card.Title>noch nicht verifizierbar</Card.Title>
-            <ProgressBar variant="danger" now={0} />
-          </div>
-          <div class="col-sm-1">
-            <span className="material-icons undef">
+      <Card.Body>
+        <div>
+          <div className="row">
+            <div className="col-sm-11">
+              <Card.Title>noch nicht verifizierbar</Card.Title>
+              <ProgressBar variant="danger" now={0} />
+            </div>
+            <div className="col-sm-1">
+              <span className="material-icons undef">
                 live_help
             </span>
+            </div>
           </div>
         </div>
-      </div>
-      <Card.Text className="cart-top-margin">
-        <p>Unsere Künstliche Intelligenz arbeitet auf hochtouren sich alles anzueignen, gib ihr noch etwas Zeit.</p>
-      <b>check-den-fakt.de</b> Prüfung konnte keine Quellen finden. Bitte leite diese Nachricht nicht weiter.
+        <Card.Text className="cart-top-margin">
+          <p>Unsere Künstliche Intelligenz arbeitet auf hochtouren sich alles anzueignen, gib ihr noch etwas Zeit.</p>
+          <b>check-den-fakt.de</b> Prüfung konnte keine Quellen finden. Bitte leite diese Nachricht nicht weiter.
       </Card.Text>
-    </Card.Body>
-  </Card>
+      </Card.Body>
+    </Card>
   }
 
   return (
     <div className="text-center">
 
-    <Accordion className="">
-      <Card>
-        <Card.Header>
-          <Accordion.Toggle as={NavLink}  eventKey="0">
-          <b>Alpha-Version</b>
-          </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="0">
-          <Card.Body>
-          <p>Wusstest du, dass <b>check-den-fakt.de</b> gerade einmal {deltaDays} Tage alt ist?</p> Wir stehen gerade erst so richtig in den Startlöchern und haben großes vor. Wir wollen unsere Plattform themenübergreifend weiterentwickeln und versuchen so viel wie möglich von unseren Nutzern zu lernen.
+      <Accordion className="">
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle as={NavLink} eventKey="0">
+              <b>Alpha-Version</b>
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey="0">
+            <Card.Body>
+              <p>Wusstest du, dass <b>check-den-fakt.de</b> gerade einmal {deltaDays} Tage alt ist?</p> Wir stehen gerade erst so richtig in den Startlöchern und haben großes vor. Wir wollen unsere Plattform themenübergreifend weiterentwickeln und versuchen so viel wie möglich von unseren Nutzern zu lernen.
           </Card.Body>
-        </Accordion.Collapse>
-      </Card>
+          </Accordion.Collapse>
+        </Card>
       </Accordion>
-      
-      
+
+
       <div className="d-flex justify-content-center">
-          <div className={`polygon ${bgClass}`}>
-            <div className="container">
+        <div className={`polygon ${bgClass}`}>
+          <div className="container">
             {content}
             {/*trustedPublisher && <ShareButtons />*/}
-            </div>
           </div>
         </div>
+      </div>
       <div className="text-left">
         <p className="fact-header">Deine Nachricht:</p>
         <Card className="your-message-card">
           <p>"{requestData && (requestData.text || requestData.url)}"</p>
+        </Card>
+      </div>
+      <div>
+        <p className="fact-header">So kommt unsere Einschätzung zustande</p>
+        <Card className="your-message-card">
+
+          {/* Trusted PB */}
+          {detailedResult.publisher["score"] ? <div><h2>CheckTheFact Vertrauenswürdige Quelle</h2>
+          <p>Reson: {detailedResult.publisher["reason"]}</p>
+            <Chart
+            chartType="PieChart"
+            width="100%"
+            height="150px"
+            data={[
+              ["Kategorie", "Anteil"],
+              ["Richtig", detailedResult.publisher["score"]],
+              ["Falsch", (1.0 - detailedResult.publisher["score"])],
+            ]}
+            options={{
+              title: "Source Trust Score",
+              pieHole: 0.6,
+              is3D: false
+            }}
+          />
+          </div> : <div></div>}
+
+          {/* FakeNews DB */}
+          {detailedResult.dbMatch["amountVotes"] ? <div><h2>CheckTheFact Fake News Datenbank</h2> 
+          <p>Wir haben einen DB Eintrag gefunden, der zu {detailedResult.dbMatch["weight"]}% übereinstimmt</p>
+          <Card className="your-message-card">
+            {detailedResult.dbMatch["text"]}
+          </Card>
+          <Chart
+            chartType="PieChart"
+            width="100%"
+            height="150px"
+            data={[
+              ["Kategorie", "Anteil"],
+              ["Richtig", detailedResult.dbMatch["proVotes"]],
+              ["Falsch", detailedResult.dbMatch["conVotes"]],
+            ]}
+            options={{
+              title: "User voting",
+              pieHole: 0.6,
+              is3D: false
+            }}
+          /></div> : <div></div>}
+
+          {/* ML Model */}
+          {detailedResult.mlPrediction["score"] ? <div><h2>CheckTheFact AI</h2>
+            <Chart
+            chartType="PieChart"
+            width="100%"
+            height="150px"
+            data={[
+              ["Kategorie", "Anteil"],
+              ["Richtig", detailedResult.mlPrediction["score"]],
+              ["Falsch", (1.0 - detailedResult.mlPrediction["score"])],
+            ]}
+            options={{
+              title: "AI score",
+              pieHole: 0.6,
+              is3D: false
+            }}
+          />
+          </div> : <div></div>}
+
         </Card>
       </div>
       <a className="fact-link pt-5" href="/about">Wer wir sind?</a>
