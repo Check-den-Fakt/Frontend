@@ -1,24 +1,28 @@
 import React from 'react';
-import { useTranslation, getI18n } from 'react-i18next';
+
+import { useTranslation } from 'react-i18next';
+
 
 export default function Imprint() {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
+
   // Declare a new state variable, which we'll call "count"
   return (
-    <div>
-        <h1>{t('imprint')}</h1>
+    <div className="mt-5">
+        <h1>{t("imprint")}</h1>
 
-        <h2>{t('tmg')}</h2>
-        <p>{t('checkTheFact')}<br />
-            Kammergasse 9<br />
-            85354 Freising</p>
+        <h2>{t("InformatonInAcc")} 5 TMG</h2>
+        <p> IDEENbuero UG (haftungsbeschränkt)<br />
+        Karolingerring 25<br />
+        50678 Köln</p>
 
-        <p><strong>{t('represented')}</strong><br />
-            Antonella Lorenz</p>
+        <p><strong>{t("management")} </strong><br />
+        Maika Paetzold</p>
 
-        <h2>{t('contact')}</h2>
-        <p>{t('telephone')} <br />
-            E-Mail: welcome@check-den-fakt.de</p>
+        <h2>{t("contact")}</h2>
+        <p>{t("phone")} +49 221 - 204 750 70<br />
+            E-Mail: faktencheck@ideenbuero.de</p>
+
 
         {/**<h2>EU-Streitschlichtung</h2>
         <p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>.<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
@@ -30,9 +34,8 @@ export default function Imprint() {
         <h3>{t('link')}</h3>
         <p>{t('linkText')}</p>
 
-        <h3>{t('copyright')}</h3>
-        <p>{t('copyrightText')}</p>
-        <p>{t('source')}</p>
+        <p>{t("Source")}<a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">eRecht24</a></p>
+
     </div>
   );
 }

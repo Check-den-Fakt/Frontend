@@ -9,6 +9,9 @@
 
     "aboutUs": "About us",
 
+    "alpha":"Alpha version",
+    "artificialIntelligence":"Our artificial intelligence works hard to learn everything. Give it some more time.",
+
     "afterUploadingYourMessage": "After uploading your message, you receive an evaluation. It shows one of the following results:",
 
     "AmIAskedTo" : "Am I being asked to share this message? (“please share.”)",
@@ -22,6 +25,12 @@
     "checkTheFact": "Check the Fact",
 
     "CheckWithApp" : "Check your information with a verified fact-checking app before you share it.",
+
+    "CheckCouldFind":"check could find reputable sources. You can share the message.",
+
+    "CheckIsNotSure":"check is not entirely sure. Please do not share the message. Help us to improve and submit this message and tell us what you think about it.",
+
+    "CheckCouldNot" : "check could barely find reputable sources. Please do not share the message.",
 
     "contact": "Contact",
     "content": "Accountability for content",
@@ -37,7 +46,11 @@
 
     "ConfusesAnd" : "confuses and causes damage. Bogus messages spread quickly and act like a virus themselves – we have an “infodemic” on top of a pandemic.",
 
+    "DidYouKnow":"Did you know, that",
+    
     "dataPrivacyPolicy": "Legal Information",
+
+    "DaysOld":"days old?",
 
     "Detect" : "Expose Fake news",
 
@@ -67,17 +80,32 @@
 
     "howToEvaluate": "How to Evaluate a News Message?",
 
+    "HowDoYouAssess":"What do you think about the following text?",
+
+    "HowThisComesAbout":"How does this rating come about?",
+
     "howDoYouDoThat": "How do you do that?",
     "howToEvaluate": "How to Evaluate a News Message?",
+
+    "HowDoI":"How do I recognise Fake News",
+
+    "InformationInAcc":"Information in accordance with",
+    
     "insertAFile": "Insert a file, text message or link here!",
 
     "introText": "The number of fake news concerning the corona virus is increasing constantly. Many people have difficulties estimating, if a news message is true or false. This can lead to uncertainties and misconduct – with dramatic consequences. ",
+
+    "interdisciplinaryTeam":"We are an interdisciplinary team of 36 specialists from all over the world. Despite our team comprises members of different age, gender and specialisation, we all have the same goal.",
+
+    "IsOnly":"is only",
 
     "imprint": "Imprint",
 
     "immunity" : "Does the message present assumptions as facts? (“If enough people get infected, herd immunity develops and it can't spread anymore.”) ",
 
     "isAPlatform": "Check the Fact is a platform on which you can check news and messages for their truthfulness. To achieve this, Check the Facts compares them with qualified sources and expert opinions. If  the message is credible, pass it on. If it’s not, post a clarification.",
+    
+    "ItIsOurGoal":"Our goal is to sensitise users for a responsible media usage and to reduce the spread of Fake News. In times of crisis it is even more important, that the truth goes viral.",
 
     "link": "Accountability for links",
     "links": "Links",
@@ -85,9 +113,22 @@
 
     "links": "Links",
 
+    "management":"Company management and responsible for the content:",
+
+    "notVerifiable":"not yet verifiable",
+
+    "OurMisson":"Our mission",
+
+    "OurVision" :"Our vision",
+
+
     "PersonalLevel" : "Is the message trying to address me on a personal level? (“I'm XY's mommy”)",
 
     "pictures": "Pictures",
+
+    "phone":"Phone:",
+
+    "RightNow":"Right now we are at the ready and we have big plans. We want to develop our platform across different topics and try to learn as much as possible from our users.",
 
     "red": "Red: Non-credible. Don’t share it! Share the clarification!",
     "represented": "Represented by",
@@ -95,6 +136,8 @@
     "ReferenceImages" : "Does the message reference images, videos or voice messages without further details? (“Long queue in front of store X in city Y”).",
 
     "reportFakeMessage": "Report fake message",
+
+    "reputable":"reliable",
 
     "shareTheResult": "Share the result of the evaluation with your contacts to inform them.",
 
@@ -104,6 +147,8 @@
     "text": "Text",
     "tmg": "Information in accordance with Section 5 TMG",
 
+    "Source":"Source: ",
+
     "StoryFromAnotherCountry" : "Is the message telling a story, from another country perhaps? (“In Italy they observed...”)",
 
     "Statistics" : "Does the message use statistics or statements from supposedly well-known institutions or persons – but without referencing reliable sources? (“10 out of 5 coronavirus sufferers from 2010-2015 ...”)",
@@ -112,7 +157,21 @@
 
     "Simplification" : "Is the statement of the message overly simplified?(“There have always been corona and flu viruses, so the corona effects are not worse than a normal flu outbreak”).",
 
+    "SubmitFake":"Submit Fake News",
+
+    "Submit":"Submit",
+
+    "SupportCommunity": "Support the Check The Fact community",
+
+    "skip":"Skip",
+
+    "SomeTips":"Here you can find some tipps, that help you to validate news.",
+
     "text": "Text", 
+
+    "ThereAreNoMore":"There are no more news to assess...",
+
+    "TheTeamIntroduces" : "The “Check-the-Fact-Team” introduces itself",
 
     "TheseQuestions" : "Which questions can you ask yourself to expose fake news?",
 
@@ -124,15 +183,28 @@
 
     "trueToTheMotto": "True to the motto: Take care before you share!",
 
+    "true":"Valid",
+
     "tweets": "Tweets",
     
     "unsureIfThisNews": "Unsure if this news message is true? Let us help you!",
 
+    "weWantToGivePeople":"We want to give people a tool, which can identify and refute Corona related Fake News and Fake News in general. And this with very low effort",
+
+    "WeCouldUseAHand" : "We could use a little help to assess this news.",
+
+    "whatsThisAllAbout": "What’s this all about?",
+  
     "vote": "Vote FakeNews",
-    
-    "whatsThisAllAbout": "What’s This All About?",
+
 
     "yellow": "Yellow: Uncertain! Mind our directions!",
+
+    "YouFoundFake":"You spotted Fake News? Share it with us!",
+
+    "yourMessage":"Your message:",
+
+    "YourSources":"Your Sources:",
 
     "__COMMENT": "PLEASE SORT ALPHABETICALLY, THANK YOU!"
 

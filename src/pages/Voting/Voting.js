@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
+import { useTranslation } from 'react-i18next';
 import authentication from 'react-azure-adb2c'
+
 
 window.id = 0;
 
@@ -56,18 +58,20 @@ export default class Voting extends Component {
     this.getNews();
   }
   render () {
+    const { t } = useTranslation();
+
     const { news, isLoading } = this.state;
     // Declare a new state variable, which we'll call "count"
     return (
     <div className="mt-5">
       <div className="text-center">
-        <h1 className="display-4">Unterstütze die Check The Fact Community</h1>
-        <p className="lead">Wir können noch ein bisschen Hilfe bei der Beurteilung dieser Nachricht gebrauchen.</p>
+    <h1 className="display-4">{t("SupportCommunity")}</h1>
+    <p className="lead">{t("WeCouldUseAHand")}</p>
       </div>
      
       <div className="d-flex justify-content-center mt-n3">
         <div className="polygon background-color-1">
-        <h3 className="text-center py-2">Wie schätzt du folgenden Text ein?</h3>
+    <h3 className="text-center py-2">{t("HowDoYouAssess")}</h3>
        <Form className="container">
         <Form.Group controlId="exampleForm.ControlTextarea1">
 
@@ -75,7 +79,7 @@ export default class Voting extends Component {
               disabled
             as="textarea" 
             rows="6"
-            value={ (!!news && news.Content) || 'Keine weitere Nachrichten zum abstimmen vorhanden...'}
+            value={ (!!news && news.Content) || t("ThereAreNoMore") }
           />
         </Form.Group>
         {isLoading ? <Spinner animation="border" /> :
@@ -103,7 +107,7 @@ export default class Voting extends Component {
                 <span class="material-icons vote-btn green">
                 thumb_up
                 </span>
-                <p><b>Richtig</b></p>
+    <p><b>{t("true")}</b></p>
                 </Button>
               </div>
 
@@ -114,7 +118,7 @@ export default class Voting extends Component {
                     onClick={this.getNews}
                     variant="light"
                 >
-                  <b>Überspringen</b>
+                  <b>{t("skip")}</b>
                 </Button>
               </div>
             </div>}
@@ -123,9 +127,9 @@ export default class Voting extends Component {
     </div>
     </div>
     <div className="text-center ">
-    <p>Hier findest du ein paar Tipps, die dir dabei helfen Nachrichten zu verifizieren.</p>
+    <p>{t("SomeTips")}</p>
     <div className="d-flex justify-content-center">
-    <Button className="py-2" variant="primary" href="/rules"><b>Wie erkenne ich Fake News</b></Button>
+    <Button className="py-2" variant="primary" href="/rules"><b>{t("HowDoI")}</b></Button>
     </div>
     </div>
         </div>

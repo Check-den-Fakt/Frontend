@@ -1,6 +1,8 @@
 import React from 'react';
 import { Diagram } from '../../components/Diagram';
 import './Result.css';
+import { useTranslation } from 'react-i18next';
+
 // import { useAccordionToggle } from 'react-bootstrap';
 
 // function CustomToggle({ children, eventKey }) {
@@ -16,6 +18,7 @@ import './Result.css';
 // }
 
 export default function ResultDetails({ details }) {
+  const { t } = useTranslation();
 
   
   const detailedContent = [];
@@ -35,7 +38,7 @@ export default function ResultDetails({ details }) {
   return (
    
     <div className="text-left margin-top-40">
-       <h3>Wie kommt diese Einschätzung zustande?</h3>
+       <h3>{t("HowThisComesAbout")}</h3>
        {detailedContent}
       {/* <h1>Wie kommt diese Einschätzung zustande:</h1>   */}
       {/* <div>
