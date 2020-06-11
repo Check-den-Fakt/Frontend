@@ -3,6 +3,8 @@ import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
 import authentication from '../../utils/react-azure-adb2c'
+import { useTranslation } from 'react-i18next';
+
 
 //import Reaptcha from 'reaptcha';
 
@@ -65,12 +67,14 @@ export default class Report extends Component {
 
 
   render () {
+    const { t } = useTranslation();
+
     const { text, isLoading } = this.state;
     return (
     <div className="mt-5">
       <div className="text-center">
-      <h1 className="display-4">Falschnachricht melden</h1>
-      <p className="lead">Du hast eine Falschnachricht entdeckt? Teile sie hier mit uns!</p>
+    <h1 className="display-4">{t("SubmitFake")}</h1>
+    <p className="lead">{t("YouFoundFake")}</p>
       </div>
      
       <div className="d-flex justify-content-center mt-n3">
@@ -87,7 +91,7 @@ export default class Report extends Component {
           />
         </Form.Group>
         <div className="py-4">
-          <h3>Deine Belege:</h3>
+    <h3>{t("YourSources")}</h3>
           <Form>
           {this.sourcesInputs.map(sourcesInputs => <div> {sourcesInputs} </div>)} 
           </Form>
@@ -104,7 +108,7 @@ export default class Report extends Component {
         disabled={!text} 
         onClick={this.handleSubmit} 
         variant="primary">
-        Nachricht einreichen
+        {t("Submit")}
       </Button>}
       </Form>
     </div>
