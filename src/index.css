@@ -316,6 +316,11 @@ a.purple {
   color: #cf6f6f !important;
 }
 
+.result-card{
+  width: 25rem;
+  max-width: 100vw !important;
+}
+
 @media (max-width: 768px) {
   .submit-btn {
     display: block;

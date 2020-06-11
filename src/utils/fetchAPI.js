@@ -1,6 +1,8 @@
 export default {
   postData: async (url = '', data = {}, adb2cToken = '') => {
 
+    let sendDate = (new Date()).getTime();
+
     //Different API keys for old and new Api
     let ApiOcp = "";
     if (url.includes("apim-checkdenfakt-prod-we-001")){
@@ -35,6 +37,11 @@ export default {
     if (res.statusCode){
       console.error(res, url)
     }
+
+    
+    let receiveDate = (new Date()).getTime();
+    let responseTimeMs = receiveDate - sendDate;
+    console.log("Api: ",url, "Response time: ", responseTimeMs,"ms");
     return res; // parses JSON response into native JavaScript objects
   },
   postMultiData: async (url = '', postData = {}) => {

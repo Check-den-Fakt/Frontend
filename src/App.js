@@ -7,7 +7,7 @@ import {
 
 // App Insights
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
-import { ReactPlugin, withAITracking } from '@microsoft/applicationinsights-react-js';
+import { ReactPlugin } from '@microsoft/applicationinsights-react-js';
 import { createBrowserHistory } from "history";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,6 +25,7 @@ import DSGVO from "./pages/DSGVO/DSGVO";
 import authentication from 'react-azure-adb2c';
 import Voting from "./pages/Voting/Voting";
 import Admin from "./pages/Admin/Admin";
+import Playground from "./pages/Playground/Playground"
 
 const browserHistory = createBrowserHistory({ basename: '' });
 var reactPlugin = new ReactPlugin();
@@ -39,12 +40,17 @@ var appInsights = new ApplicationInsights({
 });
 appInsights.loadAppInsights();
 
+
 function App() {
+
   return (
     <Suspense fallback={null}>
       <Layout>
         <Router>
           <Switch>
+            <Route path="/playground">
+              <Playground />
+            </Route>
             <Route path="/about">
               <About />
             </Route>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation, getI18n } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 export default function Imprint() {
     const { t } = useTranslation();
