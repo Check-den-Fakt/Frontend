@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
-import authentication from '../../utils/react-azure-adb2c'
 import { useTranslation } from 'react-i18next';
+import authentication from 'react-azure-adb2c'
+
 
 window.id = 0;
 

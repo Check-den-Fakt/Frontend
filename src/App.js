@@ -5,6 +5,11 @@ import {
   Route
 } from "react-router-dom";
 
+// App Insights
+import { ApplicationInsights } from '@microsoft/applicationinsights-web';
+import { ReactPlugin, withAITracking } from '@microsoft/applicationinsights-react-js';
+import { createBrowserHistory } from "history";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import About from './pages/About/About';
@@ -17,8 +22,22 @@ import Landing from './pages/Landing/Landing';
 import Report from './pages/Report/Report';
 import Imprint from "./pages/Imprint/Imprint";
 import DSGVO from "./pages/DSGVO/DSGVO";
-import authentication from './utils/react-azure-adb2c';
+import authentication from 'react-azure-adb2c';
 import Voting from "./pages/Voting/Voting";
+import Admin from "./pages/Admin/Admin";
+
+const browserHistory = createBrowserHistory({ basename: '' });
+var reactPlugin = new ReactPlugin();
+var appInsights = new ApplicationInsights({
+    config: {
+        instrumentationKey: '86ec0f3c-18e8-479e-a989-8019c49e5c08',
+        extensions: [reactPlugin],
+        extensionConfig: {
+          [reactPlugin.identifier]: { history: browserHistory }
+        }
+    }
+});
+appInsights.loadAppInsights();
 
 function App() {
   return (
@@ -34,6 +53,9 @@ function App() {
             </Route>
             <Route exact path="/report" component={authentication.required(Report)} />
             <Route exact path="/voting" component={authentication.required(Voting)} />
+            <Route exact path="/admin">
+              <Admin/>
+            </Route>
             <Route path="/result">
               <Result />
             </Route>
