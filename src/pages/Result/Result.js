@@ -4,11 +4,13 @@ import Accordion from 'react-bootstrap/Accordion'
 import './Result.css';
 import { ProgressBar, Card, Alert } from 'react-bootstrap';
 import { Chart } from "react-google-charts";
+import { useTranslation } from 'react-i18next';
 
 // import ShareButtons from '../../components/ShareButtons';
 
 export default function Result({ verifable, overallScore, requestData, detailedResult }) {
   const trustScore = overallScore;
+  const { t } = useTranslation();
   
 
   // Declare a new state variable, which we'll call "count"
@@ -47,7 +49,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
             </div>
           </div>
           <Card.Text className="cart-top-margin">
-            <b>check-den-fakt.de</b> Prüfung konnte seriöse Quellen bestätigen. Du kannst die Nachricht teilen.
+            <b>check-den-fakt.de</b> {t("CheckCouldFind")}
           </Card.Text>
         </Card.Body>
       </Card>
@@ -59,7 +61,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
           <div className="container">
             <div className="row">
               <div className="col-sm-11">
-                <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
+                <Card.Title>{trustScore * 100}% {t("reputable")}</Card.Title>
                 <ProgressBar variant="warning" now={trustScore * 100} />
               </div>
               <div className="col-sm-1">
@@ -70,7 +72,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
             </div>
           </div>
           <Card.Text className="cart-top-margin">
-            <b>check-den-fakt.de</b> Prüfung ist sich nicht ganz sicher. Bitte leite diese Nachricht nicht weiter. Helfe uns besser zu werden und reiche diese Nachricht ein und teile uns mit was du über diese denkst.
+            <b>check-den-fakt.de</b> {t("CheckIsNotSure")}
         </Card.Text>
         </Card.Body>
       </Card>
@@ -82,7 +84,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
           <div className="container">
             <div className="row">
               <div className="col-sm-11">
-                <Card.Title>{trustScore * 100}% glaubwürdig</Card.Title>
+                <Card.Title>{trustScore * 100}% {t("reputable")}</Card.Title>
                 <ProgressBar variant="danger" now={trustScore * 100} />
               </div>
               <div className="col-sm-1">
@@ -93,7 +95,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
             </div>
           </div>
           <Card.Text className="cart-top-margin">
-            <b>check-den-fakt.de</b> Prüfung konnte kaum seriöse Quellen bestätigen. Bitte leite diese Nachricht nicht weiter.Nachricht bestätigen. Bitte leite sie nicht weiter.
+            <b>check-den-fakt.de</b> {t("CheckCouldNot")}
         </Card.Text>
         </Card.Body>
       </Card>
@@ -108,7 +110,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
         <div>
           <div className="row">
             <div className="col-sm-11">
-              <Card.Title>noch nicht verifizierbar</Card.Title>
+              <Card.Title>{t("notVerifiable")}</Card.Title>
               <ProgressBar variant="danger" now={0} />
             </div>
             <div className="col-sm-1">
@@ -119,8 +121,8 @@ export default function Result({ verifable, overallScore, requestData, detailedR
           </div>
         </div>
         <Card.Text className="cart-top-margin">
-          <p>Derzeit sind wir noch nicht in der Lage diese Aussage oder Quelle zu überprüfen.</p>
-          <b>check-den-fakt.de</b> Prüfung konnte keine Quellen finden. Bitte leite diese Nachricht nicht weiter.
+          <p>{t("artificialIntelligence")}</p>
+          <b>check-den-fakt.de</b> {t("CheckCouldNot")}
       </Card.Text>
       </Card.Body>
     </Card>
@@ -133,13 +135,12 @@ export default function Result({ verifable, overallScore, requestData, detailedR
         <Card>
           <Card.Header>
             <Accordion.Toggle as={NavLink} eventKey="0">
-              <b>Alpha-Version</b>
+              <b>{t("alpha")}</b>
             </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-              <p>Wusstest du, dass <b>check-den-fakt.de</b> gerade einmal {deltaDays} Tage alt ist?</p> 
-              Wir stehen gerade erst so richtig in den Startlöchern und haben großes vor. Wir wollen unsere Plattform themenübergreifend weiterentwickeln und versuchen so viel wie möglich von unseren Nutzern zu lernen.
+            <p>{t("DidYouKnow")} <b>check-den-fakt.de</b> {t("IsOnly")} {deltaDays} {t("DaysOld")} </p> {t("RightNow")}
           </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -156,7 +157,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
         </div>
       </div>
       <div className="text-left">
-        <p className="fact-header">Deine Nachricht:</p>
+  <p className="fact-header">{t("yourMessage")}</p>
         <Card className="your-message-card">
           <p>"{requestData && (requestData.text || requestData.url)}"</p>
         </Card>

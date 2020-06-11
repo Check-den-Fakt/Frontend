@@ -1,12 +1,17 @@
 import React from 'react';
 import Iframe from 'react-iframe'
 import './About.css'
+import { useTranslation } from 'react-i18next';
+
 
 export default function About() {
+    
+    const { t } = useTranslation();
+
   return (
       <div className="container my-5">
-          <h1>Das Check-den-Fakt-Team stellt sich vor</h1>
-          <p>Wir sind ein interdisziplinäres Team, bestehend aus 36 Spezialisten aus aller Welt. Unser Team besteht aus Menschen verschiedenen Alters, Geschlechts und Fachrichtungen, trotz allem haben wir alle dasselbe Ziel.</p>
+          <h1>{t("TheTeamIntroduces")}</h1>
+            <p>{t("interdisciplinaryTeam")}</p>
           <Iframe 
             url="/teamMapSrc/web/index.htm"
             id="mapFrame"
@@ -15,16 +20,16 @@ export default function About() {
           <div className="pt-5 d-flex justify-content-center">
               <div className="polygon background-color-2">
                   <div className="container">
-                      <h2>Unsere Mission</h2>
+                      <h2>{t("OurMission")}</h2>
                       <p>
-                          Wir wollen Menschen ein Tool an die Hand geben, mit denen sie Corona-Falschnachrichten und andere Falschmeldungen identifizieren und widerlegen können. Und dies mit einem sehr geringen Arbeitsaufwand.
+                          {t("weWantToGivePeople")}
                       </p>
                   </div>
               </div>
           </div>
-          <h2>Unsere Vision</h2>
+          <h2>{t("OurMission")}</h2>
           <p>
-              Es ist unser Ziel Nutzer für einen verantwortungsbewussten Medienumgang zu sensibilisieren und die Verbreitung von Falschmeldungen zu reduzieren. Denn in Krisenzeiten ist es umso wichtiger, dass die Wahrheit viral geht.
+              
           </p>
     </div>
   );
