@@ -52,14 +52,16 @@ export default function Landing() {
   if (isMobile) {
     mobileImages = <div className="text-center pt-5">
       <Carousel activeIndex={index} onSelect={handleSelect}>
-        {partnerLogos.map(({ src, alt }, id) =>
+        {partnerLogos.map(({ src, alt, link }, id) =>
           <Carousel.Item key={id}>
             <div className="img-container">
+              <a href={link}>
               <img className="carousel-img"
                 src={src}
                 alt={alt}
                 title={alt}
                 key={id} />
+              </a>
             </div>
           </Carousel.Item>
         )}
@@ -69,13 +71,15 @@ export default function Landing() {
     mobileImages =
       <div className="text-center">
         <div className="w-100">
-          {partnerLogos.map(({ src, alt }, id) =>
+          {partnerLogos.map(({ src, alt, link }, id) =>
+          <a href={link}>
             <img className="logo-wall"
               src={src}
               alt={alt}
               title={alt}
               key={id}
             />
+          </a>
           )}
         </div>
       </div>

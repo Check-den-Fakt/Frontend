@@ -2,11 +2,13 @@
     {
         "id":1,
          "src":"/img/carousel/virus_de.png",
-         "alt":"Wir vs Virus Hackathon"
+         "alt":"Wir vs Virus Hackathon",
+         "link":"https://wirvsvirus.org/"
     },
     {
         "id":2,
          "src":"/img/carousel/virus_ch.png",
-         "alt":"Versus Virus"
+         "alt":"Versus Virus",
+         "link":"https://www.versusvirus.ch/"
     }
 ]
