@@ -197,8 +197,8 @@ export default function Landing() {
           </div>
         </div>
       </div>
-      <div className="my-3 text-center">
-        <h2>{t('fundingPartners')}</h2>
+      <div className="mb-5 text-center">
+        <h1>{t('fundingPartners')}</h1>
         {mobileImages}
       </div>
 
