@@ -1,10 +1,10 @@
 export default function scoreCalc(responseResults, DEBUG) {
 
-  const { trustedPB, fakeSearch, mlPredict, controv } = { ...responseResults };
+  const { trustedPB, fakeSearch, mlPredict } = { ...responseResults };
 
   let overallScore = null;
 
-  DEBUG && console.log("Trusted PB", trustedPB, "Search", fakeSearch, "Model", mlPredict, "Controv", controv)
+  DEBUG && console.log("Trusted PB", trustedPB, "Search", fakeSearch, "Model", mlPredict)
 
   //Score metrics 
   const detailedScores = {
@@ -13,15 +13,13 @@ export default function scoreCalc(responseResults, DEBUG) {
     mlPrediction: {}
   }
 
-
-
   if (fakeSearch && fakeSearch.length) {
     //const scores = fakeSearch.map(val => val['@search.score']);
     //fakeSearch.maxValue = Math.max(...scores);
 
     detailedScores.dbMatch["maxMatch"] = fakeSearch[0]['@search.score'];
 
-    if (fakeSearch[0]['@search.score'] > 0.25) {
+    if (fakeSearch[0]['@search.score'] > 0.1) {
       //Prevent wrong count calculations (amountVotes > abs(votes) )
 
 
