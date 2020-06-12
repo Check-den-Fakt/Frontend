@@ -1,5 +1,17 @@
 export default {
   postData: async (url = '', data = {}, adb2cToken = '') => {
+
+    let sendDate = (new Date()).getTime();
+
+    //Different API keys for old and new Api
+    let ApiOcp = "";
+    if (url.includes("apim-checkdenfakt-prod-we-001")){
+      ApiOcp = "982ddb93986741a596d85db30707f91d";
+    }
+    else if (url.includes("we-checkdenfakt-apimgm.azure-api.net")){
+      ApiOcp = "67a029cf86da4384b2b511f577163d72";
+    }
+
     // Default options are marked with *
     const response = await fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -7,7 +19,7 @@ export default {
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'same-origin', // include, *same-origin, omit
       headers: {
-        'Ocp-Apim-Subscription-Key' : "67a029cf86da4384b2b511f577163d72",
+        'Ocp-Apim-Subscription-Key' : ApiOcp,
         'Authorization' : adb2cToken, 
         'Content-Type': 'application/json'
       },
@@ -20,8 +32,16 @@ export default {
     try {
       res = await response.json();
     } catch {
-
+      console.error("Failed to consume body or parse json response for api", url)
     }
+    if (res.statusCode){
+      console.error(res, url)
+    }
+
+    
+    let receiveDate = (new Date()).getTime();
+    let responseTimeMs = receiveDate - sendDate;
+    console.log("Api: ",url, "Response time: ", responseTimeMs,"ms");
     return res; // parses JSON response into native JavaScript objects
   },
   postMultiData: async (url = '', postData = {}) => {
@@ -52,7 +72,7 @@ export default {
     let headers = {};
     if(token){
       headers = {
-        'Ocp-Apim-Subscription-Key' : "67a029cf86da4384b2b511f577163d72",
+        'Ocp-Apim-Subscription-Key' : "982ddb93986741a596d85db30707f91d",
         'Authorization' : token,
         'Content-Type': 'application/json',
       };

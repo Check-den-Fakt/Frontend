@@ -2,73 +2,68 @@ import React, { useState } from 'react';
 import AddNews from '../../components/AddNews';
 import Result from '../Result/Result';
 import fetchAPI from '../../utils/fetchAPI';
+import scoreCalc from './ScoreCalc'
 import { useTranslation } from 'react-i18next';
 
-export default function Check () {
+export default function Check (props) {
   const { t } = useTranslation();
   const [checkResult, setCheckResult] = useState(null);
   const [detailedResult, setDetailedResult] = useState(null);
   const [requestData, setRequestData] = useState(null);
   const [verifiable, setVerifiable] = useState(null);
 
+  const DEBUG = false;
+
+  
   const handleSendData = async (data) => {
-    let detailedScores = {};
     setRequestData(data);
 
-    let overallScore = 0.0;
-    if (data.text){
-      const searchResponse = await fetchAPI.postData("https://we-checkdenfakt-apimgm.azure-api.net/we-factsearch-fa/Search", {text: data.text});
-      const modelJSONResponse = await fetchAPI.postData("https://we-checkdenfakt-apimgm.azure-api.net/we-mlmodel-web/prediction", {text: data.text});
-      //Should be adjusted in Backend so that it is same as other responses
-      const modelResponse = JSON.parse(modelJSONResponse);
-
-      if (searchResponse && searchResponse.value && searchResponse.value.length) {
-        const scores = searchResponse.value.map(val => val['@search.score']);
-        searchResponse.fakeCount = scores.length;
-        searchResponse.maxValue = Math.max(...scores);
-        const matches = searchResponse.value;
-        overallScore = overallScore + 1 - searchResponse.maxValue;
-        detailedScores["Database match"] = searchResponse.maxValue;
-        if (searchResponse.maxValue > 0.5){
-          setVerifiable(true);
-        }
-        else{
-          setVerifiable(false);
-        }
-        for (let x of matches) {
-          if (x['@search.score'] > 0.25){
-            //Here Sting matching or distance between text
-            if (x.document.Content.includes(data.text)){
-              //console.log("Wir haben einen Eintrag gefunden, der Bereits von x Benutzern als Falsch gekennzeichnet wurde, der ihrer Eingabe sehr ähnelt.",x.document.Content)
-            }
-          }
-        }
-      }
-      if (modelResponse && modelResponse.score){
-        if(overallScore){
-          overallScore = (overallScore + modelResponse.score) / 2.0;
-        }
-        else{
-          overallScore = modelResponse.score;
-          setVerifiable(false);
-        }
-        detailedScores["KI score"] = searchResponse.maxValue;
-      }
-    } else if (data.url) { 
-      const trustedPubResponse = await fetchAPI.postData("https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-web", {uri: data.url});
-      if (trustedPubResponse){
-        overallScore = trustedPubResponse.trustScore;
-        detailedScores["Trusted publisher score"] = trustedPubResponse.trustScore;
-        setVerifiable(true);
-      } else {
-        overallScore = 0.0;
-        setVerifiable(false);
-      }
+    const responseResults = {
+      trustedPB : null,
+      fakeSearch : null,
+      mlPredict : null,
     }
-    //const overallScore = modelResponse + searchResponse + trustedPubResponse
+    
+    if (data.url){
+      const srcaperResponse = await fetchAPI.postData("https://apim-checkdenfakt-prod-we-001.azure-api.net/webscraper/WebScraperFunc", {url: data.url});
+      responseResults.trustedPB = await fetchAPI.postData("https://apim-checkdenfakt-prod-we-001.azure-api.net/trustedpublisher/GetTrustedPublisher", {url: data.url});
+      data.text = srcaperResponse ? srcaperResponse.text : null;
+      DEBUG && console.log("Scraper: ",srcaperResponse, "TrustedPB: ", responseResults.trustedPB);
+    }
+    if (data.text){
+      responseResults.fakeSearch = await fetchAPI.postData("https://apim-checkdenfakt-prod-we-001.azure-api.net/fakenewssearch/Search", {text: data.text});
+      const modelJSONResponse = await fetchAPI.postData("https://apim-checkdenfakt-prod-we-001.azure-api.net/classifyfakenews/prediction", {text: data.text});
+      responseResults.mlPredict = JSON.parse(modelJSONResponse);
+      DEBUG && console.log("FakeSearch: ",responseResults.fakeSearch, "model: ", responseResults.mlPredict);
+    }
+    else{
+      console.error("Got no text from scraper or input");
+    }
+
+    let detailedScores = null;
+    let overallScore = null;
+
+    const scores  = scoreCalc(responseResults, DEBUG);
+    if (scores.overallScore !== null){
+      overallScore = scores.overallScore;
+      setVerifiable(true);
+    }
+    else{
+      setVerifiable(false);
+    }
+    if (scores.detailedScores !== null){
+      detailedScores = scores.detailedScores;
+      setVerifiable(true);
+    }
+    else{
+      console.error("Error for detailed result")
+    }
+
     setCheckResult(overallScore);
     setDetailedResult(detailedScores);
+    
   } 
+
 
   return (
     <div className="text-center mt-5">

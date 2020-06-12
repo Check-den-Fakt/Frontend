@@ -18,13 +18,19 @@ export default function Landing() {
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const response = await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-komnews-fa/GetNews', {
+      const response = await fetchAPI.postData('https://apim-checkdenfakt-prod-we-001.azure-api.net/newssearch/GetNews', {
         query : "corona"
       });
-      setNews(response.news.value);
+      if (response.news){
+        setNews(response.news.value);
+      }
+      else{
+        console.warn("Wrong response from NewsApi")
+      }
     }
     fetchData();
   }, []); // Or [] if effect doesn't need props or state
+
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
