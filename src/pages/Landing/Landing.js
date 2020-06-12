@@ -11,7 +11,7 @@ export default function Landing() {
   const isMobile = window.innerWidth <= 768;
   const [index, setIndex] = useState(0);
   const [news, setNews] = useState([]);
-  const imgSrc = "img/logo-" + i18n.language + ".svg";
+
   let mobileImages = null;
   let addText = null;
 
@@ -30,6 +30,15 @@ export default function Landing() {
     }
     fetchData();
   }, []); // Or [] if effect doesn't need props or state
+
+
+  //Logo selection
+  let imgSrc = "img/logo-de.svg";
+  const currentPath = window.location.href;
+  if (currentPath.includes(".com")){
+    imgSrc = "img/logo-en.svg";
+  }
+
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
