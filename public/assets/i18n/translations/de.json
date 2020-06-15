@@ -13,6 +13,7 @@
     "artificialIntelligence":"Unsere Künstliche Intelligenz arbeitet auf Hochtouren daran, sich alles anzueignen. Gib ihr noch etwas Zeit.",
 
     "alpha":"Alpha-Version",
+
     "afterUploadingYourMessage": "Nach dem Hochladen erhältst du die Auswertung, mit folgenden Möglichkeit:",
 
     "AmIAskedTo" : "Werde ich aufgefordert, diese Nachricht zu teilen? (“bitte weiterleiten.”)",
@@ -29,15 +30,20 @@
 
     "CheckCouldFind":"Prüfung konnte seriöse Quellen bestätigen. Du kannst die Nachricht teilen.",
 
-    "CheckIsNotSure":" Prüfung ist sich nicht ganz sicher. Bitte leite diese Nachricht nicht weiter. Helfe uns besser zu werden und reiche diese Nachricht ein und teile uns mit was du über diese denkst.",
+    "CheckIsNotSure":"Prüfung ist sich nicht ganz sicher. Bitte leite diese Nachricht nicht weiter. Helfe uns besser zu werden und reiche diese Nachricht ein und teile uns mit was du über diese denkst.",
+
+    "CheckNotVerifiable": "Die Check-den-Fakt-Prüfung konnte keine verifizierbare Quelle finden. Vielleicht hast Du mit Deiner eigenen Recherche mehr Erfolg.",
 
     "CheckCouldNot" : "Prüfung konnte kaum seriöse Quellen bestätigen. Bitte leite diese Nachricht nicht weiter.",
 
     "contact": "Kontakt",
 
     "content": "Haftung für Inhalte",
+
     "contentText": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.\n\nVerpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
+
     "copyright": "Urheberrecht",
+
     "copyrightText": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.\n\nSoweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.",
 
     "ConspiracyTheory" : "Erzählt man mir eine Verschwörungstheorie? (“Z.B.: Das Virus wurde schon im Jahr X in einem Waffenlabor in Land Y entwickelt.”)",
@@ -61,6 +67,8 @@
     "dataPrivacyPolicy": "Datenschutzerklärung",
 
     "english": " Englisch ",
+
+    "fundingPartners": "Unsere Kooperationen",
 
     "enterYourNewsMessage": "Gib deine Nachricht bei Check the Fact ein. Folgende Möglichkeiten hast du:",
 
@@ -116,7 +124,7 @@
 
     "management":"Geschäftsführung und inhaltlich Verantwortliche:",
 
-    "notVerifiable":"noch nicht verifizierbar",
+    "notVerifiable":"Noch nicht verifizierbar",
 
     "OurMisson":"Unsere Mission",
 
@@ -166,8 +174,6 @@
     "skip":"Überspringen",
 
     "SomeTips":"Hier findest du ein paar Tipps, die dir dabei helfen Nachrichten zu verifizieren.",
-
-    "text": "Freitexteingabe", 
 
     "ThereAreNoMore":"Keine weiteren Nachrichten zum abstimmen vorhanden...",
 

@@ -12,7 +12,7 @@ export default function Check (props) {
   const [requestData, setRequestData] = useState(null);
   const [verifiable, setVerifiable] = useState(null);
 
-  const DEBUG = false;
+  const DEBUG = true;
 
   
   const handleSendData = async (data) => {
@@ -53,9 +53,9 @@ export default function Check (props) {
     }
     if (scores.detailedScores !== null){
       detailedScores = scores.detailedScores;
-      setVerifiable(true);
     }
     else{
+      setVerifiable(false);
       console.error("Error for detailed result")
     }
 

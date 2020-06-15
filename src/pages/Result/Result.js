@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 export default function Result({ verifable, overallScore, requestData, detailedResult }) {
   const trustScore = overallScore;
   const { t } = useTranslation();
-  
+
 
   // Declare a new state variable, which we'll call "count"
   let content = null;
@@ -73,7 +73,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
           </div>
           <Card.Text className="cart-top-margin">
             <b>check-den-fakt.de</b> {t("CheckIsNotSure")}
-        </Card.Text>
+          </Card.Text>
         </Card.Body>
       </Card>
     }
@@ -96,7 +96,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
           </div>
           <Card.Text className="cart-top-margin">
             <b>check-den-fakt.de</b> {t("CheckCouldNot")}
-        </Card.Text>
+          </Card.Text>
         </Card.Body>
       </Card>
     }
@@ -121,9 +121,8 @@ export default function Result({ verifable, overallScore, requestData, detailedR
           </div>
         </div>
         <Card.Text className="cart-top-margin">
-          <p>{t("artificialIntelligence")}</p>
-          <b>check-den-fakt.de</b> {t("CheckCouldNot")}
-      </Card.Text>
+          <b>check-den-fakt.de</b> {t("CheckNotVerifiable")}
+        </Card.Text>
       </Card.Body>
     </Card>
   }
@@ -140,8 +139,8 @@ export default function Result({ verifable, overallScore, requestData, detailedR
           </Card.Header>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-            <p>{t("DidYouKnow")} <b>check-den-fakt.de</b> {t("IsOnly")} {deltaDays} {t("DaysOld")} </p> {t("RightNow")}
-          </Card.Body>
+              <p>{t("DidYouKnow")} <b>check-den-fakt.de</b> {t("IsOnly")} {deltaDays} {t("DaysOld")} </p> {t("RightNow")}
+            </Card.Body>
           </Accordion.Collapse>
         </Card>
       </Accordion>
@@ -157,7 +156,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
         </div>
       </div>
       <div className="text-left">
-  <p className="fact-header">{t("yourMessage")}</p>
+        <p className="fact-header">{t("yourMessage")}</p>
         <Card className="your-message-card">
           <p>"{requestData && (requestData.text || requestData.url)}"</p>
         </Card>
@@ -177,11 +176,11 @@ export default function Result({ verifable, overallScore, requestData, detailedR
                 <Card className="result-card">
                   <Card.Body>
                     <Card.Title>{detailedResult.publisher["url"]}</Card.Title>
-                    
-                      <Alert variant="dark">
-                        {detailedResult.publisher["reason"]}
-                      </Alert>
-                    
+
+                    <Alert variant="dark">
+                      {detailedResult.publisher["reason"]}
+                    </Alert>
+
                     <Card.Subtitle className="mb-2 text-muted">Quell-Glaubwürdigkeit:</Card.Subtitle>
                     <Chart
                       chartType="PieChart"
@@ -206,11 +205,11 @@ export default function Result({ verifable, overallScore, requestData, detailedR
                 <Card style={{ width: '25rem' }}>
                   <Card.Body>
                     <Card.Title>Wir haben einen Datenbankeintrag gefunden, der zu {detailedResult.dbMatch["weight"].toFixed(4) * 100}% mit ihrem Beitrag übereinstimmt.</Card.Title>
-                    
-                      <Alert variant="dark">
-                        {detailedResult.dbMatch["text"]}
-                      </Alert>
-                    
+
+                    <Alert variant="dark">
+                      {detailedResult.dbMatch["text"]}
+                    </Alert>
+
                     <Card.Subtitle className="mb-2 text-muted">Nutzer Abstimmung:</Card.Subtitle>
                     <Chart
                       chartType="PieChart"
