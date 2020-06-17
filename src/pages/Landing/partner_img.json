@@ -10,5 +10,11 @@
          "src":"/img/carousel/virus_ch.png",
          "alt":"Versus Virus",
          "link":"https://www.versusvirus.ch/"
+    },
+    {
+        "id":2,
+         "src":"solve_for_tomorrow.png",
+         "alt":"Solve for Tomorrow",
+         "link":"https://solvefortomorrow.ch/"
     }
 ]
