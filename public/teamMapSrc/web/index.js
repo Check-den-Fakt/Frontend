@@ -3,7 +3,7 @@
 var maxClusterZoomLevel = 11;
 
 //The URL to the store location data.
-var storeLocationDataUrl = 'https://we-checkdenfakt-apimgm.azure-api.net/we-teammap-func/GetTeamMembers';
+var storeLocationDataUrl = 'https://apim-checkdenfakt-prod-we-001.azure-api.net/teammap/GetTeamMembers';
 
 //The URL to the icon image. 
 var iconImageUrl = 'images/ctf-icon.svg';

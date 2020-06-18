@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
-import authentication from '../../utils/react-azure-adb2c'
+import authentication from 'react-azure-adb2c'
 import { withTranslation } from 'react-i18next';
 
 window.id = 0;
@@ -28,7 +28,7 @@ class Voting extends Component {
     news.Voting = news.Voting + status ? 1 : -1;
     this.setState({ isLoading: true });
     try {
-      await fetchAPI.postData(`https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Vote${type}`, body, adb2cToken)
+      await fetchAPI.postData(`https://apim-checkdenfakt-prod-we-001.azure-api.net/fakenewsmod/Vote${type}`, body, adb2cToken)
     } catch (e) {
       this.setState({isLoading: false })
     } finally {
@@ -44,7 +44,7 @@ class Voting extends Component {
     const query = offset === 0 ? 'GetOne' : `GetNext?offset=${offset}`;
     let response = null;
     try{
-      response = await fetchAPI.getData(`https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/${query}`, adb2cToken)
+      response = await fetchAPI.getData(`https://apim-checkdenfakt-prod-we-001.azure-api.net/fakenewsmod/${query}`, adb2cToken)
     }
     catch (e) {
       this.setState({isLoading: false })
@@ -91,7 +91,7 @@ class Voting extends Component {
                     onClick={() => this.handleSubmit(false)}
                     variant="link"
                 >
-                  <span class="material-icons vote-btn red">
+                  <span className="material-icons vote-btn red">
                 thumb_down
                 </span>
                 <p><b>Fake</b></p>
@@ -103,7 +103,7 @@ class Voting extends Component {
                     disabled={!news}
                     onClick={() => this.handleSubmit(true)}
                 >
-                <span class="material-icons vote-btn green">
+                <span className="material-icons vote-btn green">
                 thumb_up
                 </span>
     <p><b>{t("true")}</b></p>

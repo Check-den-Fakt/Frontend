@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
-import authentication from '../../utils/react-azure-adb2c'
+import authentication from 'react-azure-adb2c'
 import { withTranslation } from 'react-i18next';
 
 
@@ -20,6 +20,7 @@ class Report extends Component {
     isReported: false,
     isLoading: false,
   };
+
 
   componentDidMount() { this.handleAddNew() }
 
@@ -57,7 +58,7 @@ class Report extends Component {
     this.setState({ isLoading: true });
     try {
       console.log("Post", { Content: this.state.text, Sources: this.state.sources })
-      await fetchAPI.postData('https://we-checkdenfakt-apimgm.azure-api.net/we-fakenews-func/Insert', { Content: this.state.text, Sources: this.state.sources }, adb2cToken);
+      await fetchAPI.postData('https://apim-checkdenfakt-prod-we-001.azure-api.net/fakenewsmod/Insert', { Content: this.state.text, Sources: this.state.sources }, adb2cToken);
     } catch (e) {
       this.setState({ isReported: false, isLoading: false })
     } finally {
