@@ -14,14 +14,14 @@ export default function DSGVO() {
             Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als "Onlineangebot“).</p>
         <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
         <h2 id="m3">Verantwortliche</h2>
+        
         <p>
-            Check den Fakt<br/>
-            Kammergasse 9<br/>
-            85354 Freising<br/>
-            Deutschland</p>
-        <p><strong>Vertretungsberechtigte Person</strong>: Antonella Lorenz</p>
-        <p><strong>E-Mail-Adresse</strong>: welcome@check-den-fakt.de</p>
-        <p><strong>Telefon</strong>: +49 (0) 171 7472075</p>
+        IDEENbuero UG (haftungsbeschränkt)<br />
+        Karolingerring 25<br />
+        50678 Köln<br /></p>
+        <p><strong>Vertretungsberechtigte Person</strong>: Maika Paetzold</p>
+        <p><strong>E-Mail-Adresse</strong>: faktencheck@ideenbuero.org</p>
+        <p><strong>Telefon</strong>:  +49 221 - 204 750 70</p>
         <h2 id="mOverview">Übersicht der Verarbeitungen</h2><p>Die nachfolgende Übersicht fasst die Arten der
         verarbeiteten Daten und die Zwecke ihrer Verarbeitung zusammen und verweist auf die betroffenen Personen.</p>
         <h3>Arten der verarbeiteten Daten</h3>

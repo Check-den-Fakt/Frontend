@@ -9,7 +9,7 @@ export default function Imprint() {
     <div className="mt-5">
         <h1>{t("imprint")}</h1>
 
-        <h2>{t("InformatonInAcc")} 5 TMG</h2>
+        <h2>{t("InformationInAcc")} 5 TMG</h2>
         <p> IDEENbuero UG (haftungsbeschränkt)<br />
         Karolingerring 25<br />
         50678 Köln</p>
@@ -19,7 +19,9 @@ export default function Imprint() {
 
         <h2>{t("contact")}</h2>
         <p>{t("phone")} +49 221 - 204 750 70<br />
-            E-Mail: faktencheck@ideenbuero.de</p>
+            E-Mail: faktencheck@ideenbuero.org<br />
+            Instagramm, Facebook, Twitter: @checkdenfakt<br/>
+            </p>
 
 
         {/**<h2>EU-Streitschlichtung</h2>
