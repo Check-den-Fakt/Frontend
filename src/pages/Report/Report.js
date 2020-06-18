@@ -3,14 +3,14 @@ import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
 import authentication from '../../utils/react-azure-adb2c'
-import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 
 //import Reaptcha from 'reaptcha';
 
 window.id = 0;
 
-export default class Report extends Component {
+class Report extends Component {
 
 
   state = {
@@ -67,7 +67,7 @@ export default class Report extends Component {
 
 
   render () {
-    const { t } = useTranslation();
+    const { t } = this.props;
 
     const { text, isLoading } = this.state;
     return (
@@ -117,3 +117,5 @@ export default class Report extends Component {
     );
   }
 }
+
+export default withTranslation()(Report);

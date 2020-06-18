@@ -34,7 +34,7 @@ class AddNews extends Component {
 
   render () {
     const { text, isLoading } = this.state; 
-
+    const { t } = this.props;
     return (
     <Form className="container">
       <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -44,7 +44,7 @@ class AddNews extends Component {
           as="textarea" 
           rows="6"
           disabled={isLoading}
-          placeholder="Insert a file, text message or link here!"
+          placeholder={t("insertAFile")}
         />
       </Form.Group>
       {isLoading ? <Spinner animation="border" /> : <Button 
@@ -53,7 +53,7 @@ class AddNews extends Component {
         variant="primary"
         className="submit-btn mb-3"
       >
-        <b>Check This Fact</b>
+        <b>{t("checkTheFact")}</b>
       </Button>}
     </Form>
     );

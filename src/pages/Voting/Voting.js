@@ -3,11 +3,11 @@ import { Form, Spinner } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
 import authentication from '../../utils/react-azure-adb2c'
-import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 window.id = 0;
 
-export default class Voting extends Component {
+class Voting extends Component {
 
   state = {
     sources: [],
@@ -57,7 +57,7 @@ export default class Voting extends Component {
     this.getNews();
   }
   render () {
-    const { t } = useTranslation();
+    const { t } = this.props;
 
     const { news, isLoading } = this.state;
     // Declare a new state variable, which we'll call "count"
@@ -135,3 +135,5 @@ export default class Voting extends Component {
     );
   }
 }
+
+export default withTranslation()(Voting);
