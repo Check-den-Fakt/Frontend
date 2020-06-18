@@ -22,7 +22,7 @@ export default class Admin extends Component {
         const token = await authProvider.getAccessToken();
         let response = null;
         try {
-            response = await fetchAPI.getData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/GetAllPublisher`, token.accessToken)
+            response = await fetchAPI.getData(`https://apim-checkdenfakt-prod-we-001.azure-api.net/trustedpublisher/GetAllPublisher`, token.accessToken)
         } catch (e) {
             this.setState({isLoading: false})
         } finally {
@@ -81,7 +81,7 @@ export class TrustedPublisher extends Component {
         this.setState({show: false })
         if(!!publisher.Url && !!publisher.Reason && !!publisher.TrustScore) {
             try{
-                await fetchAPI.postData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/${saveFunction}`, publisher, token.accessToken)
+                await fetchAPI.postData(`https://apim-checkdenfakt-prod-we-001.azure-api.net/trustedpublisher/${saveFunction}`, publisher, token.accessToken)
             }
             catch (e) {
                 this.setState({isLoading: false })
@@ -99,7 +99,7 @@ export class TrustedPublisher extends Component {
             RowKey: row.rowKey,
         };
         try{
-            await fetchAPI.postData(`https://we-checkdenfakt-apimgm.azure-api.net/we-trustedpublisher-func/DeleteTrustedPublisher`, publisher, token.accessToken)
+            await fetchAPI.postData(`https://apim-checkdenfakt-prod-we-001.azure-api.net/trustedpublisher/DeleteTrustedPublisher`, publisher, token.accessToken)
         }
         catch (e) {
             this.setState({isLoading: false })

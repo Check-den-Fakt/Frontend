@@ -4,13 +4,8 @@ export default {
     let sendDate = (new Date()).getTime();
 
     //Different API keys for old and new Api
-    let ApiOcp = "";
-    if (url.includes("apim-checkdenfakt-prod-we-001")){
-      ApiOcp = "982ddb93986741a596d85db30707f91d";
-    }
-    else if (url.includes("we-checkdenfakt-apimgm.azure-api.net")){
-      ApiOcp = "67a029cf86da4384b2b511f577163d72";
-    }
+    let ApiOcp = "982ddb93986741a596d85db30707f91d";
+
 
     // Default options are marked with *
     const response = await fetch(url, {
@@ -32,13 +27,9 @@ export default {
     try {
       res = await response.json();
     } catch {
-      console.error("Failed to consume body or parse json response for api", url)
-    }
-    if (res.statusCode){
-      console.error(res, url)
+      return null;
     }
 
-    
     let receiveDate = (new Date()).getTime();
     let responseTimeMs = receiveDate - sendDate;
     console.log("Api: ",url, "Response time: ", responseTimeMs,"ms");
