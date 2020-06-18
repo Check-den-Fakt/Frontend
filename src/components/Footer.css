@@ -1,6 +1,27 @@
 footer {
-    -webkit-box-shadow: 0 -5px 5px rgba(211, 211, 211, 1);
-    -moz-box-shadow: 0 -5px 5px rgba(211, 211, 211, 1);
-    box-shadow: 0 -5px 5px rgba(211, 211, 211, 1);
     width: 100%;
+    background: #333333;
+    padding: 50px 0;
+}
+
+
+.desc a {
+    font-size: 16px;
+    line-height: 24px;
+    color: #bebebe ;
+    text-decoration: none;
+    display: block;
+}
+
+.ico a {
+    line-height: 24px;
+    padding: 5px;
+}
+
+.social-ico{
+    transition: transform .2s;
+    height: 30px;
+}
+.social-ico:hover {
+    transform: scale(1.2);
 }
