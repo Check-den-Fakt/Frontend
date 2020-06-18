@@ -10,6 +10,7 @@
     "aboutUs": "About us",
 
     "alpha":"Alpha version",
+
     "artificialIntelligence":"Our artificial intelligence works hard to learn everything. Give it some more time.",
 
     "afterUploadingYourMessage": "After uploading your message, you receive an evaluation. It shows one of the following results:",
@@ -29,10 +30,20 @@
     "CheckCouldFind":"check could find reputable sources. You can share the message.",
 
     "CheckIsNotSure":"check is not entirely sure. Please do not share the message. Help us to improve and submit this message and tell us what you think about it.",
+    
+    "CheckNotVerifiable": "The Check the Fact verification couldn’t find a source. Maybe you'll have more success with your own research.",
 
     "CheckCouldNot" : "check could barely find reputable sources. Please do not share the message.",
 
     "contact": "Contact",
+
+    "content": "Accountability for content",
+
+    "contentText": "The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages. In this matter, please note that we are not obliged to monitor the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity. Our obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per §§ 8 to 10 of the Telemedia Act (TMG).",
+
+    "copyright": "Copyright",
+
+    "copyrightText": "Our web pages and their contents are subject to German copyright law. Unless expressly permitted by law, every form of utilizing, reproducing or processing works subject to copyright protection on our web pages requires the prior consent of the respective owner of the rights. Individual reproductions of a work are only allowed for private use. The materials from these pages are copyrighted and any unauthorized use may violate copyright laws.",
 
     "coronaFakeNews": "Corona Fake news",
 
@@ -66,6 +77,8 @@
 
     "german": " German ",
 
+    "fundingPartners": "Our cooperations",
+
     "goldenRules": "Golden Rules",
 
     "green": "Green: Credible. Share it!",
@@ -81,8 +94,6 @@
     "HowThisComesAbout":"How does this rating come about?",
 
     "howDoYouDoThat": "How do you do that?",
-
-
 
     "HowDoI":"How do I recognise Fake News",
 
@@ -104,16 +115,19 @@
     
     "ItIsOurGoal":"Our goal is to sensitise users for a responsible media usage and to reduce the spread of Fake News. In times of crisis it is even more important, that the truth goes viral.",
 
+    "link": "Accountability for links",
+
     "links": "Links",
+
+    "linkText": "Responsibility for the content of external links (to web pages of third parties) lies solely with the operators of the linked pages. No violations were evident to us at the time of linking. Should any legal infringement become known to us, we will remove the respective link immediately.",
 
     "management":"Company management and responsible for the content:",
 
-    "notVerifiable":"not yet verifiable",
+    "notVerifiable":"Not yet verifiable",
 
     "OurMisson":"Our mission",
 
     "OurVision" :"Our vision",
-
 
     "PersonalLevel" : "Is the message trying to address me on a personal level? (“I'm XY's mommy”)",
 
@@ -124,6 +138,7 @@
     "RightNow":"Right now we are at the ready and we have big plans. We want to develop our platform across different topics and try to learn as much as possible from our users.",
 
     "red": "Red: Non-credible. Don’t share it! Share the clarification!",
+    "represented": "Represented by",
 
     "ReferenceImages" : "Does the message reference images, videos or voice messages without further details? (“Long queue in front of store X in city Y”).",
 
@@ -134,6 +149,10 @@
     "shareTheResult": "Share the result of the evaluation with your contacts to inform them.",
 
     "socialMediaMessages": "Social Media Messages",
+    "source": "Source: translate-24h Übersetzungen",
+    "telephone": "Telephon: +49 (0) 171 7472075",
+ 
+    "tmg": "Information in accordance with Section 5 TMG",
 
     "Source":"Source: ",
 
@@ -182,6 +201,9 @@
     "WeCouldUseAHand" : "We could use a little help to assess this news.",
 
     "whatsThisAllAbout": "What’s this all about?",
+  
+    "vote": "Vote FakeNews",
+
 
     "yellow": "Yellow: Uncertain! Mind our directions!",
 

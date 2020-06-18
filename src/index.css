@@ -6,6 +6,7 @@ body {
   font-size: 13px !important;
   line-height: 20px !important;
   margin: 0 !important;
+  overflow-x: hidden; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -195,8 +196,8 @@ h3 {
 
 .btn-secondary:hover {
   background-color: #FFEFB6 !important;
-  border: 2px solid rgba(255, 255, 255, 0.0) !important;
-  color: #F7CC36 !important;
+  border: 2px solid #FFAE00 !important;
+  color: #333 !important;
 }
 
 .btn-secondary:hover::before {
@@ -242,7 +243,7 @@ button:disabled {
 
 .logo-wall {
   padding: 20px;
-  height: 90px;
+  height: 100px;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   opacity: .6;
@@ -313,6 +314,11 @@ a.purple {
 
 .red {
   color: #cf6f6f !important;
+}
+
+.result-card{
+  width: 25rem;
+  max-width: 100vw !important;
 }
 
 @media (max-width: 768px) {
