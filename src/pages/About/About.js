@@ -27,10 +27,6 @@ export default function About() {
                   </div>
               </div>
           </div>
-          <h2>{t("OurMission")}</h2>
-          <p>
-              
-          </p>
     </div>
   );
 }
