@@ -3,7 +3,8 @@
 var maxClusterZoomLevel = 11;
 
 //The URL to the store location data.
-var storeLocationDataUrl = 'https://apim-checkdenfakt-prod-we-001.azure-api.net/teammap/GetTeamMembers';
+var storeLocationDataUrl = "https://apim-checkdenfakt-prod-we-001.azure-api.net/func-teammap-prod-we-001/GetTeamMembers"
+//'https://apim-checkdenfakt-prod-we-001.azure-api.net/teammap/GetTeamMembers';
 
 //The URL to the icon image. 
 var iconImageUrl = 'images/ctf-icon.svg';
@@ -169,7 +170,8 @@ function loadStoreData() {
         cache: "default",
         headers: {
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key' : "19eb481c91194ba08aa560371cd51147"
+            'Ocp-Apim-Subscription-Key' : "1c9e83d13fd24f4f9de88899808f7aeb"
+            //"19eb481c91194ba08aa560371cd51147"
 
         }
     })
@@ -180,7 +182,7 @@ function loadStoreData() {
             var features = [];
 
             var members = JSON.parse(text);
-
+            console.log(members)
             members.forEach(value => {
                 features.push(new atlas.data.Feature(new atlas.data.Point([parseFloat(value.longitude), parseFloat(value.latitude)]), {
                     AddressLine: value.street,
