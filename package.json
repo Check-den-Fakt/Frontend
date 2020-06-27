@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
     "@microsoft/applicationinsights-react-js": "^3.0.0",
     "@microsoft/applicationinsights-web": "^2.5.5",
     "bootstrap": "^4.5.0",

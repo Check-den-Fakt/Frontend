@@ -28,8 +28,6 @@ import Admin from "./pages/Admin/Admin";
 import Playground from "./pages/Playground/Playground"
 import CookieKit from "react-cookie-kit";
 
-
-
 const browserHistory = createBrowserHistory({ basename: '' });
 var reactPlugin = new ReactPlugin();
 var appInsights = new ApplicationInsights({

@@ -4,6 +4,8 @@ import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
 import authentication from 'react-azure-adb2c'
 import { withTranslation } from 'react-i18next';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 window.id = 0;
 
@@ -91,10 +93,8 @@ class Voting extends Component {
                     onClick={() => this.handleSubmit(false)}
                     variant="link"
                 >
-                  <span className="material-icons vote-btn red">
-                thumb_down
-                </span>
-                <p><b>Fake</b></p>
+                  <ThumbDownIcon className="material-icons vote-btn red"/>
+                  <p><b>Fake</b></p>
                 </Button>
 
                 <Button
@@ -103,10 +103,8 @@ class Voting extends Component {
                     disabled={!news}
                     onClick={() => this.handleSubmit(true)}
                 >
-                <span className="material-icons vote-btn green">
-                thumb_up
-                </span>
-    <p><b>{t("true")}</b></p>
+                  <ThumbUpIcon className="material-icons vote-btn green"/>
+                  <p><b>{t("true")}</b></p>
                 </Button>
               </div>
 
