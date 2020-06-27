@@ -11,20 +11,17 @@ export default class Auth extends Component {
     loginRequest = authProvider.getLoginRequest(this.props.type);
 
     login = () => {
+        console.log('hier', 'login')
         if(authProvider.isAuthenticated(this.props.type)) {
+            console.log('hier', 'isAutnenticate');
             this.setState({authenticated: true, isInitialized: true});
         } else {
-            this.msalInstance.handleRedirectCallback((error, response) => {
-                let authenticated;
-                if (error) {
-                    console.error('could not be authenticated', error);
-                    authenticated = false;
-                } else {
-                    authenticated = !!response;
-                }
-                this.setState({authenticated: authenticated, isInitialized: true});
-            });
-            this.msalInstance.loginRedirect(this.loginRequest);
+            this.msalInstance.loginPopup(this.loginRequest)
+                .then(response => this.setState({authenticated: !!response, isInitialized: true}))
+                .catch(err => {
+                    console.error(err);
+                    this.setState({authenticated: false, isInitialized: true})
+                });
         }
     }
 
