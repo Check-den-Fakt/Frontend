@@ -3,7 +3,7 @@
 var maxClusterZoomLevel = 11;
 
 //The URL to the store location data.
-var storeLocationDataUrl = "https://apim-checkdenfakt-prod-we-001.azure-api.net/func-teammap-prod-we-001/GetTeamMembers"
+var storeLocationDataUrl = "https://apim-checkdenfakt-prod-we-001.azure-api.net/teammap/GetTeamMembers"
 //'https://apim-checkdenfakt-prod-we-001.azure-api.net/teammap/GetTeamMembers';
 
 //The URL to the icon image. 
