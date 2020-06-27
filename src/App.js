@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, {Component, Suspense} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,6 +26,9 @@ import authentication from 'react-azure-adb2c';
 import Voting from "./pages/Voting/Voting";
 import Admin from "./pages/Admin/Admin";
 import Playground from "./pages/Playground/Playground"
+import CookieKit from "react-cookie-kit";
+
+
 
 const browserHistory = createBrowserHistory({ basename: '' });
 var reactPlugin = new ReactPlugin();
@@ -41,47 +44,69 @@ var appInsights = new ApplicationInsights({
 appInsights.loadAppInsights();
 
 
-function App() {
+class App extends Component {
+    onCookieConsentsChange = (cookieConsents) => {
+        console.log('App#onCookieConsentsChange');
+        console.dir(cookieConsents);
+    }
 
-  return (
-    <Suspense fallback={null}>
-      <Layout>
-        <Router>
-          <Switch>
-            <Route path="/playground">
-              <Playground />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/rules">
-              <Rules />
-            </Route>
-            <Route exact path="/report" component={authentication.required(Report)} />
-            <Route exact path="/voting" component={authentication.required(Voting)} />
-            <Route exact path="/admin">
-              <Admin/>
-            </Route>
-            <Route path="/result">
-              <Result />
-            </Route>
-            <Route path="/check">
-              <Check />
-            </Route>
-            <Route path="/imprint">
-              <Imprint />
-            </Route>
-            <Route path="/dsgvo">
-              <DSGVO />
-            </Route>
-            <Route path="/">
-              <Landing />
-            </Route>
-          </Switch>
-        </Router>
-      </Layout>
-    </Suspense>
-  );
+    render(){
+        return (
+            <Suspense fallback={null}>
+                <Layout>
+                    <Router>
+                        <Switch>
+                            <Route path="/playground">
+                                <Playground />
+                            </Route>
+                            <Route path="/about">
+                                <About />
+                            </Route>
+                            <Route path="/rules">
+                                <Rules />
+                            </Route>
+                            <Route exact path="/report" component={authentication.required(Report)} />
+                            <Route exact path="/voting" component={authentication.required(Voting)} />
+                            <Route exact path="/admin">
+                                <Admin/>
+                            </Route>
+                            <Route path="/result">
+                                <Result />
+                            </Route>
+                            <Route path="/check">
+                                <Check />
+                            </Route>
+                            <Route path="/imprint">
+                                <Imprint />
+                            </Route>
+                            <Route path="/dsgvo">
+                                <DSGVO />
+                            </Route>
+                            <Route path="/">
+                                <Landing />
+                            </Route>
+                        </Switch>
+                    </Router>
+                </Layout>
+                <CookieKit
+                    cssAutoLoad={true}
+                    cookieHandler={this.onCookieConsentsChange}
+                    privacyUrl="./dsgvo"
+                    requestDataTypes={['statistics', 'usage', 'application']}
+                    checkByDefaultTypes={['statistics', 'usage', 'application']}
+                    detectCountry={true}
+                    expirationTime={15552000}
+                    hideBrandTag={true}
+                    hideOnComplete={true}
+                    // theme={'overlay'}
+                    textMessage={{
+                        "de-de": "Die Beschreibung. Wir benutzen Cookies.",
+                        "en-us": "The description. We use Cookies.",
+                    }}
+                />
+            </Suspense>
+        );
+    }
 }
 
 export default App;
