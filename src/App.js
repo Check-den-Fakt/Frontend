@@ -66,22 +66,6 @@ class App extends Component {
                         </Switch>
                     </Router>
                 </Layout>
-                {/*<CookieKit*/}
-                {/*    cssAutoLoad={true}*/}
-                {/*    cookieHandler={this.onCookieConsentsChange}*/}
-                {/*    privacyUrl="./dsgvo"*/}
-                {/*    requestDataTypes={['statistics', 'usage', 'application']}*/}
-                {/*    checkByDefaultTypes={['statistics', 'usage', 'application']}*/}
-                {/*    detectCountry={true}*/}
-                {/*    expirationTime={15552000}*/}
-                {/*    hideBrandTag={true}*/}
-                {/*    hideOnComplete={true}*/}
-                {/*    // theme={'overlay'}*/}
-                {/*    textMessage={{*/}
-                {/*        "de-de": "Die Beschreibung. Wir benutzen Cookies.",*/}
-                {/*        "en-us": "The description. We use Cookies.",*/}
-                {/*    }}*/}
-                {/*/>*/}
             </Suspense>
         );
     }
