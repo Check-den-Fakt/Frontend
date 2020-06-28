@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import fetchAPI from '../../utils/fetchAPI';
 import authentication from 'react-azure-adb2c'
 import { withTranslation } from 'react-i18next';
-
+import AddIcon from '@material-ui/icons/Add';
 
 //import Reaptcha from 'reaptcha';
 
@@ -97,10 +97,8 @@ class Report extends Component {
           {this.sourcesInputs.map(sourcesInputs => <div> {sourcesInputs} </div>)} 
           </Form>
           <div className="d-flex justify-content-end">
-          <Button onClick={this.handleAddNew} variant="link" className="text-decoration-none"><b className="align-middle">Weiteren Beleg hinzufügen</b> 
-              <b className="material-icons icon-btn align-middle">
-              add
-              </b>
+          <Button onClick={this.handleAddNew} variant="link" className="text-decoration-none"><b className="align-middle">Weiteren Beleg hinzufügen</b>
+            <AddIcon className="material-icons icon-btn align-middle"/>
           </Button>
           </div>
         </div>

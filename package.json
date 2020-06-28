@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@microsoft/applicationinsights-react-js": "^3.0.0",
-    "@microsoft/applicationinsights-web": "^2.5.5",
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
     "bootstrap": "^4.5.0",
     "i18next": "^19.4.5",
     "i18next-browser-languagedetector": "^4.2.0",
     "i18next-xhr-backend": "^3.2.2",
+    "klaro": "^0.2.20",
     "material-design-icons": "^3.0.1",
     "react": "^16.13.1",
     "react-azure-adb2c": "github:Check-den-Fakt/react-azure-adb2c",
     "react-bootstrap": "^1.0.1",
     "react-circular-progressbar": "^2.0.3",
+    "react-cookie-kit": "^1.0.19",
     "react-dom": "^16.13.1",
     "react-google-charts": "^3.0.15",
     "react-i18next": "^11.5.1",
@@ -46,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "get-google-fonts": "^1.2.2"
   }
 }

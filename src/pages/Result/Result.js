@@ -5,6 +5,9 @@ import './Result.css';
 import { ProgressBar, Card, Alert } from 'react-bootstrap';
 import { Chart } from "react-google-charts";
 import { useTranslation } from 'react-i18next';
+import LiveHelpIcon from '@material-ui/icons/LiveHelp';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 // import ShareButtons from '../../components/ShareButtons';
 
@@ -42,9 +45,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
                 <ProgressBar variant="success" now={trustScore * 100.0} className="inline" />
               </div>
               <div className="col-sm-1">
-                <span className="material-icons success">
-                  check_circle
-                </span>
+                <CheckCircleIcon className="material-icons success"/>
               </div>
             </div>
           </div>
@@ -65,9 +66,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
                 <ProgressBar variant="warning" now={trustScore * 100} />
               </div>
               <div className="col-sm-1">
-                <span className="material-icons undef">
-                  live_help
-            </span>
+                <LiveHelpIcon className="material-icons undef"/>
               </div>
             </div>
           </div>
@@ -88,9 +87,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
                 <ProgressBar variant="danger" now={trustScore * 100} />
               </div>
               <div className="col-sm-1">
-                <span className="material-icons danger">
-                  cancel
-              </span>
+                <CancelIcon className="material-icons danger"/>
               </div>
             </div>
           </div>
@@ -114,9 +111,7 @@ export default function Result({ verifable, overallScore, requestData, detailedR
               <ProgressBar variant="danger" now={0} />
             </div>
             <div className="col-sm-1">
-              <span className="material-icons undef">
-                live_help
-            </span>
+              <LiveHelpIcon className="material-icons undef"/>
             </div>
           </div>
         </div>

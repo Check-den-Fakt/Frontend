@@ -4,6 +4,9 @@ import fetchAPI from '../../utils/fetchAPI';
 import Carousel from 'react-bootstrap/Carousel';
 import partnerLogos from './partner_img.json';
 import { useTranslation, getI18n } from 'react-i18next';
+import BackupIcon from '@material-ui/icons/Backup';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import ShareIcon from '@material-ui/icons/Share';
 
 export default function Landing() {
   const { t } = useTranslation();
@@ -132,9 +135,7 @@ export default function Landing() {
       <h1>{t('howToEvaluate')}</h1>
       <div className="row mt-5 pt-3">
         <div className="col-3">
-          <span className="material-icons circle-icon">
-            backup
-            </span>
+          <BackupIcon className="material-icons circle-icon"/>
         </div>
         <div className="col-9">
           <h3>{t('1.uploadMessage')}</h3>
@@ -151,9 +152,7 @@ export default function Landing() {
       </div>
       <div className="row mt-5">
         <div className="col-3">
-          <span className="material-icons circle-icon">
-            thumb_up_alt
-          </span>
+          <ThumbUpAltIcon className="material-icons circle-icon"/>
         </div>
         <div className="col-9">
           <h3>{t('2.obtainResult')}</h3>
@@ -168,9 +167,7 @@ export default function Landing() {
       </div>
       <div className="row mt-5">
         <div className="col-3">
-          <span className="material-icons circle-icon">
-            share
-            </span>
+          <ShareIcon className="material-icons circle-icon"/>
         </div>
         <div className="col-9">
           <h3>{t('3.shareTheResult')}</h3>

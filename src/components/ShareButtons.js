@@ -2,6 +2,7 @@ import React from 'react';
 import { Popover, OverlayTrigger } from 'react-bootstrap';
 import { TwitterIcon, TwitterShareButton, FacebookShareButton, FacebookIcon, TelegramShareButton, TelegramIcon, WhatsappShareButton, WhatsappIcon, LinkedinShareButton, LinkedinIcon } from 'react-share';
 import './ShareButtons.css'
+import ShareIcon from '@material-ui/icons/Share';
 
 const popover = (
     <Popover id="popover-basic">
@@ -56,7 +57,7 @@ export default function ShareButtons() {
           <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
             <div className="trigger-container">
               <button className="fact-link">Teile das Ergebnis</button>
-              <span className="fact-link material-icons share-icon">share</span>
+                <ShareIcon className="fact-link material-icons share-icon"/>
             </div>
         </OverlayTrigger>
       </div>
