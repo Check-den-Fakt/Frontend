@@ -5,11 +5,6 @@ import {
   Route
 } from "react-router-dom";
 
-// App Insights
-import { ApplicationInsights } from '@microsoft/applicationinsights-web';
-import { ReactPlugin } from '@microsoft/applicationinsights-react-js';
-import { createBrowserHistory } from "history";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import About from './pages/About/About';
@@ -25,22 +20,7 @@ import DSGVO from "./pages/DSGVO/DSGVO";
 import authentication from 'react-azure-adb2c';
 import Voting from "./pages/Voting/Voting";
 import Admin from "./pages/Admin/Admin";
-import Playground from "./pages/Playground/Playground"
-import CookieKit from "react-cookie-kit";
-
-const browserHistory = createBrowserHistory({ basename: '' });
-var reactPlugin = new ReactPlugin();
-var appInsights = new ApplicationInsights({
-    config: {
-        instrumentationKey: '86ec0f3c-18e8-479e-a989-8019c49e5c08',
-        extensions: [reactPlugin],
-        extensionConfig: {
-          [reactPlugin.identifier]: { history: browserHistory }
-        }
-    }
-});
-appInsights.loadAppInsights();
-
+import Playground from "./pages/Playground/Playground";
 
 class App extends Component {
     onCookieConsentsChange = (cookieConsents) => {
@@ -86,22 +66,22 @@ class App extends Component {
                         </Switch>
                     </Router>
                 </Layout>
-                <CookieKit
-                    cssAutoLoad={true}
-                    cookieHandler={this.onCookieConsentsChange}
-                    privacyUrl="./dsgvo"
-                    requestDataTypes={['statistics', 'usage', 'application']}
-                    checkByDefaultTypes={['statistics', 'usage', 'application']}
-                    detectCountry={true}
-                    expirationTime={15552000}
-                    hideBrandTag={true}
-                    hideOnComplete={true}
-                    // theme={'overlay'}
-                    textMessage={{
-                        "de-de": "Die Beschreibung. Wir benutzen Cookies.",
-                        "en-us": "The description. We use Cookies.",
-                    }}
-                />
+                {/*<CookieKit*/}
+                {/*    cssAutoLoad={true}*/}
+                {/*    cookieHandler={this.onCookieConsentsChange}*/}
+                {/*    privacyUrl="./dsgvo"*/}
+                {/*    requestDataTypes={['statistics', 'usage', 'application']}*/}
+                {/*    checkByDefaultTypes={['statistics', 'usage', 'application']}*/}
+                {/*    detectCountry={true}*/}
+                {/*    expirationTime={15552000}*/}
+                {/*    hideBrandTag={true}*/}
+                {/*    hideOnComplete={true}*/}
+                {/*    // theme={'overlay'}*/}
+                {/*    textMessage={{*/}
+                {/*        "de-de": "Die Beschreibung. Wir benutzen Cookies.",*/}
+                {/*        "en-us": "The description. We use Cookies.",*/}
+                {/*    }}*/}
+                {/*/>*/}
             </Suspense>
         );
     }
