@@ -7,7 +7,7 @@ export default function Rules() {
   return (
     <div className="container mt-5">
         <h1>{t("Detect")}</h1>
-        <p> {t("FakeNewsLooseTheir")} {t("TheFloodOf")}  <a href="https://www.infektionsschutz.de/cv/coronavirus.html" target="_blank" rel="noopener noreferrer">
+        <p> {t("FakeNewsLooseTheirPower")} {t("TheFloodOf")}  <a href="https://www.infektionsschutz.de/cv/coronavirus.html" target="_blank" rel="noopener noreferrer">
   <u><i>{t("Coronavirus")}</i></u></a> {t("ConfusesAnd")}
         </p>
     <div className="d-flex justify-content-center">
