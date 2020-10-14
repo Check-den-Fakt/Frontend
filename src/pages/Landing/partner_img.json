@@ -1,20 +1,26 @@
 [
-    {
-        "id":1,
-         "src":"/img/carousel/virus_de.png",
-         "alt":"Wir vs Virus Hackathon",
-         "link":"https://wirvsvirus.org/"
-    },
-    {
-        "id":2,
-         "src":"/img/carousel/virus_ch.png",
-         "alt":"Versus Virus",
-         "link":"https://www.versusvirus.ch/"
-    },
-    {
-        "id":2,
-         "src":"solve_for_tomorrow.png",
-         "alt":"Solve for Tomorrow",
-         "link":"https://solvefortomorrow.ch/"
-    }
+  {
+    "id": 1,
+    "src": "/img/carousel/journalismus_lab.png",
+    "alt": "Journalismus Lab",
+    "link": "https://www.journalismuslab.de/"
+  },
+  {
+    "id": 2,
+    "src": "/img/carousel/virus_de.png",
+    "alt": "Wir vs Virus Hackathon",
+    "link": "https://wirvsvirus.org/"
+  },
+  {
+    "id": 3,
+    "src": "/img/carousel/virus_ch.png",
+    "alt": "Versus Virus",
+    "link": "https://www.versusvirus.ch/"
+  },
+  {
+    "id": 4,
+    "src": "/img/carousel/solve_for_tomorrow.png",
+    "alt": "Solve for Tomorrow",
+    "link": "https://solvefortomorrow.ch/"
+  }
 ]
